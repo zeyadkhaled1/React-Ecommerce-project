@@ -23,39 +23,41 @@ import { UserAllAddressesPage } from "./Page/User/UserAllAddressesPage";
 import { UserEditAddressPage } from "./Page/User/UserEditAddressPage";
 import { UserAddAddressPage } from "./Page/User/UserAddAddressPage";
 import { UserProfilePage } from "./Page/User/UserProfilePage";
+import { AdminEditProductPage } from './Page/Admin/AdminEditProductPage';
 function App() {
-  return (
-    <div className="font">
-      <NavBarLogin/>
-      <BrowserRouter>
-      <Routes>
-        <Route index element={<HomePage/>}/>
-        <Route path='/login' element={<LoginPage/>}/>
-        <Route path='/register' element={<RegisterPage/>}/>
-        <Route path='/allcategory' element={<AllCategoryPage/>}/>
-        <Route path='/allbrands' element={<AllBrandPage/>}/>
-        <Route path='/allproducts' element={<ShopProductsPage/>}/>
-        <Route path='/allproducts/:id' element={<ProductDetailsPage/>}/>
-        <Route path='/cart' element={<CartPage/>}/>
-        <Route path='/order/paymentmethod' element={<PaymentMethodPage/>}/>
-        <Route path='/admin/allproducts' element={<AdminAllProductsPage/>}/>
-        <Route path='/admin/allorders' element={<AdminAllOrdersPage/>}/>
-        <Route path='/admin/order/:id' element={<AdminOrderDetailsPage/>}/>
-        <Route path='/admin/addbrand' element={<AdminAddBrandPage/>}/>
-        <Route path='/admin/addcategory' element={<AdminAddCategoryPage/>}/>
-        <Route path='/admin/addsubcategory' element={<AdminAddSubCategoryPage/>}/>
-        <Route path='/admin/addproduct' element={<AdminAddProductPage/>}/>
-        <Route path='/user/allorders' element={<UserAllOrdersPage/>}/>
-        <Route path='/user/favoriteproducts' element={<UserFavoriteProductsPage/>}/>
-        <Route path='/user/address' element={<UserAllAddressesPage/>}/>
-        <Route path='/user/edit-address' element={<UserEditAddressPage/>}/>
-        <Route path="/user/add-address" element={<UserAddAddressPage/>}/>
-        <Route path="/user/profile" element={<UserProfilePage/>}/>
-        </Routes>
-        </BrowserRouter>
-        <Footer/>
-    </div>
-  );
+	return (
+		<div className='font'>
+			<NavBarLogin />
+			<BrowserRouter>
+				<Routes>
+					<Route index element={<HomePage />} />
+					<Route path='/login' element={<LoginPage />} />
+					<Route path='/register' element={<RegisterPage />} />
+					<Route path='/allcategory' element={<AllCategoryPage />} />
+					<Route path='/allbrands' element={<AllBrandPage />} />
+					<Route path='/allproducts' element={<ShopProductsPage />} />
+					<Route path='/allproducts/:id' element={<ProductDetailsPage />} />
+					<Route path='/cart' element={<CartPage />} />
+					<Route path='/order/paymentmethod' element={<PaymentMethodPage />} />
+					<Route path='/admin/allproducts' element={<AdminAllProductsPage />} />
+					<Route path='/admin/allorders' element={<AdminAllOrdersPage />} />
+					<Route path='/admin/order/:id' element={<AdminOrderDetailsPage />} />
+					<Route path='/admin/addbrand' element={<AdminAddBrandPage />} />
+					<Route path='/admin/addcategory' element={<AdminAddCategoryPage />} />
+					<Route path='/admin/addsubcategory' element={<AdminAddSubCategoryPage />} />
+					<Route path='/admin/addproduct' element={<AdminAddProductPage />} />
+					<Route path='/admin/editproduct/:id' element={<AdminEditProductPage />} />
+					<Route path='/user/allorders' element={<UserAllOrdersPage />} />
+					<Route path='/user/favoriteproducts' element={<UserFavoriteProductsPage />} />
+					<Route path='/user/address' element={<UserAllAddressesPage />} />
+					<Route path='/user/edit-address' element={<UserEditAddressPage />} />
+					<Route path='/user/add-address' element={<UserAddAddressPage />} />
+					<Route path='/user/profile' element={<UserProfilePage />} />
+				</Routes>
+			</BrowserRouter>
+			<Footer />
+		</div>
+	);
 }
 
 export default App;

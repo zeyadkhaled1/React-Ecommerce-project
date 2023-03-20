@@ -3,8 +3,11 @@ import { Row, Col } from 'react-bootstrap';
 import MultiImageInput from 'react-multiple-image-input';
 import { ToastContainer } from 'react-toastify';
 import AdminAddProductHook from '../../hook/product/add-product-hook';
+import AdminEditProductHook from './../../hook/product/edit-product-hook';
+import { useParams } from 'react-router-dom';
 
-export const AdminAddProduct = () => {
+export const AdminEditProduct = () => {
+	const { id } = useParams();
 	const [
 		mainCategories,
 		brands,
@@ -26,11 +29,12 @@ export const AdminAddProduct = () => {
 		onChangeDescription,
 		onChangePrice,
 		onChangeQty
-	] = AdminAddProductHook();
+	] = AdminEditProductHook(id);
+	// console.log(subCategories);
 	return (
 		<div>
 			<Row className='justify-content-start '>
-				<div className='admin-content-text pb-4'> اضافه منتج جديد</div>
+				<div className='admin-content-text pb-4'>تعديل المنتج - {prodName}</div>
 				<Col sm='8'>
 					<div className='text-form pb-2'> صور للمنتج</div>
 
