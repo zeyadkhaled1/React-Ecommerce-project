@@ -6,6 +6,9 @@ export const GET_CATEGORY = 'GET_CATEGORY';
 
 export const GET_ALL_BRAND = 'GET_ALL_BRAND';
 export const CREATE_BRAND = 'CREATE_BRAND';
+export const GET_BRAND = 'GET_BRAND';
+export const UPDATE_BRAND = 'UPDATE_BRAND';
+export const DELETE_BRAND = 'DELETE_BRAND';
 
 export const GET_PRODUCT = 'GET_PRODUCT';
 export const GET_ALL_PRODUCT = 'GET_ALL_PRODUCT';

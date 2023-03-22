@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import { CategoryHeader } from '../../Components/Category/CategoryHeader';
 import { CardProductsContainer } from '../../Components/Products/CardProductsContainer';
@@ -9,13 +9,14 @@ import { useParams } from 'react-router-dom';
 
 export const ProductDetailsPage = () => {
 	const { id } = useParams();
-	const [item, images, similarItem] = ViewProductDetailsHook(id);
+	const [item, images, similarItem, similarCategories] = ViewProductDetailsHook(id);
+
 	return (
 		<div style={{ minHeight: '670px' }}>
-			<CategoryHeader />
+			<CategoryHeader categories={similarCategories} />
 			<Container>
 				<ProductDetails />
-				<RateContainer />
+				<RateContainer item={item} />
 				<CardProductsContainer
 					products={similarItem}
 					title={similarItem.length > 0 ? 'منتجات قد تعجبك' : ''}

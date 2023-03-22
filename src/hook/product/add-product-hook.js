@@ -14,7 +14,8 @@ const AdminAddProductHook = () => {
 	}, []);
 
 	const mainCategories = useSelector(state => state.allCategory.mainCategory);
-	const brands = useSelector(state => state.allBrand.brand);
+	const brandsRes = useSelector(state => state.allBrand.brands);
+	const brands = brandsRes ? brandsRes.brands : [];
 	const subCategories = useSelector(state => state.allCategory.subCategory);
 	const product = useSelector(state => state.allProduct.product);
 

@@ -5,25 +5,27 @@ import ViewProductDetailsHook from './../../hook/product/view-product-details-ho
 
 export const ProductText = () => {
 	const { id } = useParams();
-	const [item, images] = ViewProductDetailsHook(id);
+	const [item, images, similarItem, similarCategories] = ViewProductDetailsHook(id);
 
 	return (
 		<div>
 			<Row className='mt-2'>
-				<div className='cat-text'>{item.category ? item.category.title : 'test'} </div>
+				<div className='cat-text'>{item && item.category ? item.category.title : 'test'} </div>
 			</Row>
 			<Row>
 				<Col md='8'>
 					<div className='cat-title d-inline'>
-						{item.name ? item.name : 'test'}
-						<div className='cat-rate d-inline mx-3'>{item.rating ? item.rating : 0}</div>
+						{item && item.name ? item.name : 'test'}
+						<div className='cat-rate d-inline mx-3'>{item && item.rating ? item.rating : 0}</div>
 					</div>
 				</Col>
 			</Row>
 			<Row>
 				<Col md='8' className='mt-4'>
 					<div className='cat-text d-inline'>الماركة :</div>
-					<div className='barnd-text d-inline mx-1'>{item.brand ? item.brand.name : 'test'}</div>
+					<div className='barnd-text d-inline mx-1'>
+						{item && item.brand ? item.brand.name : 'test'}
+					</div>
 				</Col>
 			</Row>
 
@@ -33,14 +35,14 @@ export const ProductText = () => {
 			<Row className='mt-2'>
 				<Col md='10'>
 					<div className='product-description d-inline'>
-						{item.description ? item.description : 'test'}
+						{item && item.description ? item.description : 'test'}
 					</div>
 				</Col>
 			</Row>
 			<Row className='mt-4'>
 				<Col md='12'>
 					<div className='product-price d-inline px-3 py-3 border'>
-						{item.price ? item.price : 0} جنية
+						{item && item.price ? item.price : 0} جنية
 					</div>
 					<div className='product-cart-add px-3 py-3 d-inline mx-3'>اضف للعربة</div>
 				</Col>
