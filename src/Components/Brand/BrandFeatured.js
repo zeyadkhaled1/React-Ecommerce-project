@@ -6,7 +6,7 @@ import ViewHomeBrandsHook from './../../hook/brand/home-brand-hook';
 
 const BrandFeatured = ({ title, btntitle }) => {
 	const [brands, loading] = ViewHomeBrandsHook();
-	console.log(brands);
+
 	return (
 		<Container>
 			<SubTitle title={title} btntitle={btntitle} pathText='/allbrands' />

@@ -51,7 +51,7 @@ const AdminAddBrandHook = () => {
 			setSelectedFile(null);
 			setLoading(true);
 			setTimeout(() => setIsPress(false), 1000);
-			if (res.create) notify('تم الاضافة بنجاح', 'success');
+			if (res.status === 201) notify('تم الاضافة بنجاح', 'success');
 			else notify('هناك مشكلة', 'error');
 		}
 	}, [loading]);

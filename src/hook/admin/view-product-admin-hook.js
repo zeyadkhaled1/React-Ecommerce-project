@@ -13,11 +13,11 @@ const ViewProductAdminHook = () => {
 		await dispatch(getProductsPage(page, 12));
 	};
 
-	const allProducts = useSelector(state => state.allProduct.products);
+	const allProductsRes = useSelector(state => state.allProduct.products);
 
-	let data = allProducts.items ? allProducts : [];
+	let products = allProductsRes.data ? allProductsRes.data : [];
 
-	return [data, onPress];
+	return [products, onPress];
 };
 
 export default ViewProductAdminHook;

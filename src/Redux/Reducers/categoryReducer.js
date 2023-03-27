@@ -1,8 +1,10 @@
 import { GET_MAIN_CATEGORY, GET_SUB_CATEGORY, GET_ALL_CATEGORY, GET_CATEGORY } from './../Type';
 
 const initial = {
-	categorys: [],
+	categories: [],
 	category: [],
+	mainCategory: [],
+	subCategory: [],
 	loading: true
 };
 
@@ -11,7 +13,7 @@ export const categoryReducer = (state = initial, action) => {
 		case GET_ALL_CATEGORY:
 			return {
 				...state,
-				categorys: action.payload,
+				categories: action.payload,
 				loading: false
 			};
 		case GET_CATEGORY:

@@ -15,8 +15,7 @@ export const getAllCategory = () => {
 			const response = await useGetData('/api/category');
 			dispatch({
 				type: GET_ALL_CATEGORY,
-				payload: response.categories
-				// pages: response.remainingCategories
+				payload: response
 			});
 		} catch (e) {
 			dispatch({
@@ -48,8 +47,7 @@ export const getMainCategory = () => {
 			const response = await useGetData('/api/category?main=true');
 			dispatch({
 				type: GET_MAIN_CATEGORY,
-				payload: response.categories
-				// pages: response.remainingCategories
+				payload: response
 			});
 		} catch (e) {
 			dispatch({
@@ -65,7 +63,7 @@ export const createCategory = formData => async dispatch => {
 		const response = await useInsertDataWithImage('/api/category', formData);
 		dispatch({
 			type: CREATE_CATEGORY,
-			payload: response.category,
+			payload: response,
 			loading: true
 		});
 	} catch (e) {
@@ -81,7 +79,7 @@ export const getSubCategory = id => async dispatch => {
 		const response = await useGetData(`/api/category?parentId=${id}`);
 		dispatch({
 			type: GET_SUB_CATEGORY,
-			payload: response.categories,
+			payload: response,
 			loading: true
 		});
 	} catch (e) {

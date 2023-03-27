@@ -14,12 +14,19 @@ const AdminEditProductHook = id => {
 		dispatch(getProduct(id));
 	}, []);
 
-	const mainCategories = useSelector(state => state.allCategory.mainCategory);
-	const brands = useSelector(state => state.allBrand.brand);
-	const subCategories = useSelector(state => state.allCategory.subCategory);
-	const product = useSelector(state => state.allProduct.product);
-	const updateProduct = useSelector(state => state.allProduct.updateProduct);
-	const item = product.item;
+	const mainCategoriesRes = useSelector(state => state.allCategory.mainCategory);
+	const brandsRes = useSelector(state => state.allBrand.brands);
+	const subCategoriesRes = useSelector(state => state.allCategory.subCategory);
+	const productRes = useSelector(state => state.allProduct.product);
+	const updateProductRes = useSelector(state => state.allProduct.updateProduct);
+
+	const item = productRes && productRes.data ? productRes.data.item : [];
+	const brands = brandsRes && brandsRes.data ? brandsRes.data.brands : [];
+	const mainCategories =
+		mainCategoriesRes && mainCategoriesRes.data ? mainCategoriesRes.data.categories : [];
+	const subCategories =
+		subCategoriesRes && subCategoriesRes.data ? subCategoriesRes.data.categories : [];
+	const updateProduct = updateProductRes && updateProductRes.data ? updateProductRes.data.item : [];
 
 	const [images, setImages] = useState([]);
 	const [prodName, setProdName] = useState('');
@@ -32,7 +39,7 @@ const AdminEditProductHook = id => {
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		if (item) {
+		if (item && item.name) {
 			if (item.category && item.category.parent) {
 				setCatID(item.category.parent.parentId);
 				setSubCatID(item.category._id);
@@ -41,13 +48,14 @@ const AdminEditProductHook = id => {
 				setSubCatID(0);
 			}
 			setImages(item.img);
-			setBrandID(item.brand._id);
+			if (item.brand && item.brand._id) setBrandID(item.brand._id);
+			else setBrandID(0);
 			setProdName(item.name);
 			setProdDescription(item.description);
 			setProdPrice(item.price);
 			setQty(item.quantity);
 		}
-	}, [item]);
+	}, [productRes]);
 
 	// to change name state
 	const onChangeProdName = event => {
@@ -155,10 +163,10 @@ const AdminEditProductHook = id => {
 		if (loading === false && updateProduct) {
 			dispatch(getProduct(id));
 			setTimeout(() => setLoading(true), 1500);
-			if (updateProduct.status === 200) notify('تم الاضافة بنجاح', 'success');
+			if (updateProductRes.status === 200) notify('تم الاضافة بنجاح', 'success');
 			else notify('هناك مشكلة', 'error');
 		}
-	}, [loading, updateProduct]);
+	}, [loading]);
 
 	return [
 		mainCategories,

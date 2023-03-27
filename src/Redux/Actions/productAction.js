@@ -20,7 +20,7 @@ export const createProduct = formData => async dispatch => {
 		const response = await useInsertDataWithImage('/api/item', formData);
 		dispatch({
 			type: CREATE_PRODUCT,
-			payload: response.item,
+			payload: response,
 			loading: true
 		});
 	} catch (e) {

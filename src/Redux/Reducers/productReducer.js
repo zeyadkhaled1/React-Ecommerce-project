@@ -12,6 +12,7 @@ import {
 const initial = {
 	product: [],
 	updateProduct: [],
+	createProduct: [],
 	products: [],
 	similarProducts: [],
 	bestSeller: [],
@@ -55,7 +56,7 @@ export const productReducer = (state = initial, action) => {
 		case CREATE_PRODUCT:
 			return {
 				...state,
-				product: action.payload,
+				createProduct: action.payload,
 				loading: false
 			};
 		case UPDATE_PRODUCT:

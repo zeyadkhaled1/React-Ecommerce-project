@@ -12,8 +12,8 @@ const AllBrandHook = () => {
 	const response = useSelector(state => state.allBrand.brands);
 	const loading = useSelector(state => state.allBrand.loading);
 
-	let brands = response.brands ? response.brands : [];
-	let pageCount = response.paginationResult ? response.paginationResult.numberOfPages : 0;
+	let brands = response.data ? response.data.brands : [];
+	let pageCount = response.data ? response.data.paginationResult.numberOfPages : 0;
 
 	const getPage = page => dispatch(getAllBrand(`?pageNumber=${page}&pageSize=${pageSize}`));
 	return [brands, pageCount, getPage, loading];

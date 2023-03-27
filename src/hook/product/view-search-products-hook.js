@@ -13,11 +13,11 @@ const ViewSearchProductsHook = () => {
 		await dispatch(getProductsPage(page, 12));
 	};
 
-	const allProducts = useSelector(state => state.allProduct.products);
+	const allProductsRes = useSelector(state => state.allProduct.products);
 
-	let items = allProducts.items ? allProducts.items : [];
-	let pagination = allProducts.paginationResult ? allProducts.paginationResult : [];
-	let length = allProducts.total ? allProducts.total : [];
+	let items = allProductsRes.data ? allProductsRes.data.items : [];
+	let pagination = allProductsRes.data ? allProductsRes.data.paginationResult : [];
+	let length = allProductsRes.data ? allProductsRes.data.total : [];
 
 	return [items, pagination, length, onPress];
 };

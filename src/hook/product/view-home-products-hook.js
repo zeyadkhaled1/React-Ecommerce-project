@@ -9,11 +9,11 @@ const ViewHomeProductsHook = () => {
 		dispatch(getMostRecentProducts(4));
 	}, []);
 
-	const bestSellerProducts = useSelector(state => state.allProduct.bestSeller);
-	const mostRecentProducts = useSelector(state => state.allProduct.mostRecent);
+	const bestSellerRes = useSelector(state => state.allProduct.bestSeller);
+	const mostRecentRes = useSelector(state => state.allProduct.mostRecent);
 
-	let bestSellerItems = bestSellerProducts.items ? bestSellerProducts.items : [];
-	let mostRecentItems = mostRecentProducts.items ? mostRecentProducts.items : [];
+	let bestSellerItems = bestSellerRes.data ? bestSellerRes.data.items : [];
+	let mostRecentItems = mostRecentRes.data ? mostRecentRes.data.items : [];
 
 	return [bestSellerItems, mostRecentItems];
 };

@@ -656,3 +656,24 @@ body {
   text-align: center;
 }
 /* end filter */
+.dropdown-toggle {
+  color: white !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  margin-top: 14px !important;
+}
+
+.dropdown-menu {
+  background-color: #212529 !important;
+  color: white !important;
+}
+
+.dropdown-item {
+  color: white !important;
+  text-align: center !important;
+}
+
+.dropdown-item:hover {
+  color: #212529 !important;
+  background-color: white !important;
+}

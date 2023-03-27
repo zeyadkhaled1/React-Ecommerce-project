@@ -77,7 +77,7 @@ export const updateBrand = (id, formData) => async dispatch => {
 
 export const deleteBrand = id => async dispatch => {
 	try {
-		const response = await useDeleteData(`/api/brand/${id}`);
+		const response = await useDeleteData(`/api/brand/${id}`, undefined);
 		dispatch({
 			type: DELETE_BRAND,
 			payload: response,

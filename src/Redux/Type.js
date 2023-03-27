@@ -1,3 +1,14 @@
+export const CREATE_NEW_USER = 'CREATE_NEW_USER';
+export const LOGIN_USER = 'LOGIN_USER';
+export const GET_USER = 'GET_USER';
+export const GET_ALL_USER = 'GET_ALL_USER';
+export const UPDATE_USER = 'UPDATE_USER';
+export const DELETE_USER = 'DELETE_USER';
+export const FORGET_PASSWORD = 'FORGET_PASSWORD';
+export const RESET_PASSWORD = 'RESET_PASSWORD';
+export const CHANGE_PASSWORD = 'CHANGE_PASSWORD';
+export const REFRESH_TOKEN = 'REFRESH_TOKEN';
+
 export const GET_ALL_CATEGORY = 'GET_ALL_CATEGORY';
 export const GET_MAIN_CATEGORY = 'GET_MAIN_CATEGORY';
 export const GET_SUB_CATEGORY = 'GET_SUB_CATEGORY';

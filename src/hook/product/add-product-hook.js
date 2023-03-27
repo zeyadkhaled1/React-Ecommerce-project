@@ -13,11 +13,15 @@ const AdminAddProductHook = () => {
 		dispatch(getAllBrand());
 	}, []);
 
-	const mainCategories = useSelector(state => state.allCategory.mainCategory);
+	const mainCategoriesRes = useSelector(state => state.allCategory.mainCategory);
+	const subCategoriesRes = useSelector(state => state.allCategory.subCategory);
 	const brandsRes = useSelector(state => state.allBrand.brands);
-	const brands = brandsRes ? brandsRes.brands : [];
-	const subCategories = useSelector(state => state.allCategory.subCategory);
-	const product = useSelector(state => state.allProduct.product);
+	const productRes = useSelector(state => state.allProduct.createProduct);
+
+	const mainCategories = mainCategoriesRes.data ? mainCategoriesRes.data.categories : [];
+	const subCategories = subCategoriesRes.data ? subCategoriesRes.data.categories : [];
+	const brands = brandsRes.data ? brandsRes.data.brands : [];
+	const product = productRes.data ? productRes.data.item : [];
 
 	const [images, setImages] = useState([]);
 	const [prodName, setProdName] = useState('');
@@ -144,10 +148,10 @@ const AdminAddProductHook = () => {
 			setProdPrice('سعر المنتج');
 			setQty('الكمية المتاحة');
 			setTimeout(() => setLoading(true), 1500);
-			if (product) notify('تم الاضافة بنجاح', 'success');
+			if (productRes.status === 201) notify('تم الاضافة بنجاح', 'success');
 			else notify('هناك مشكلة', 'error');
 		}
-	}, [loading, product]);
+	}, [loading]);
 
 	return [
 		mainCategories,

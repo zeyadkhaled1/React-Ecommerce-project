@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Container } from 'react-bootstrap';
 import { CategoryHeader } from '../../Components/Category/CategoryHeader';
 import { CardProductsContainer } from '../../Components/Products/CardProductsContainer';
@@ -17,10 +17,12 @@ export const ProductDetailsPage = () => {
 			<Container>
 				<ProductDetails />
 				<RateContainer item={item} />
-				<CardProductsContainer
-					products={similarItem}
-					title={similarItem.length > 0 ? 'منتجات قد تعجبك' : ''}
-				/>
+				{similarItem ? (
+					<CardProductsContainer
+						products={similarItem}
+						title={similarItem.length > 0 ? 'منتجات قد تعجبك' : ''}
+					/>
+				) : null}
 			</Container>
 		</div>
 	);

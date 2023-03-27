@@ -2,7 +2,6 @@ import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import MultiImageInput from 'react-multiple-image-input';
 import { ToastContainer } from 'react-toastify';
-import AdminAddProductHook from '../../hook/product/add-product-hook';
 import AdminEditProductHook from './../../hook/product/edit-product-hook';
 import { useParams } from 'react-router-dom';
 
@@ -30,7 +29,7 @@ export const AdminEditProduct = () => {
 		onChangePrice,
 		onChangeQty
 	] = AdminEditProductHook(id);
-	// console.log(subCategories);
+
 	return (
 		<div>
 			<Row className='justify-content-start '>

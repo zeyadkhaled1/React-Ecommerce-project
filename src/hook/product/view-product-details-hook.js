@@ -10,19 +10,23 @@ const ViewProductDetailsHook = id => {
 		dispatch(getProduct(id));
 	}, []);
 
-	const product = useSelector(state => state.allProduct.product);
-	const similarProducts = useSelector(state => state.allProduct.similarProducts);
-	const similarCategories = useSelector(state => state.allCategory.subCategory);
+	const productRes = useSelector(state => state.allProduct.product);
+	const similarProductsRes = useSelector(state => state.allProduct.similarProducts);
+	const similarCategoriesRes = useSelector(state => state.allCategory.subCategory);
 
-	let item = product.item ? product.item : [];
-	let similarItem = similarProducts.items
-		? similarProducts.items.filter(value => value._id !== item._id).slice(0, 4)
+	let item = productRes.data ? productRes.data.item : [];
+	let similarItem = similarProductsRes.data
+		? similarProductsRes.data.items.filter(value => value._id !== item._id).slice(0, 4)
+		: [];
+	let similarCategories = similarCategoriesRes.data
+		? similarCategoriesRes.data.categories.slice(0, 6)
 		: [];
 
 	useEffect(() => {
 		if (item && item.category) {
 			dispatch(getSimilarProducts(item.category._id));
 			if (item.category.parent) dispatch(getSubCategory(item.category.parent.parentId));
+			else if (item.category.isParent) dispatch(getSubCategory(item.category._id));
 		}
 	}, [item]);
 

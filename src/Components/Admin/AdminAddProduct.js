@@ -27,7 +27,7 @@ export const AdminAddProduct = () => {
 		onChangePrice,
 		onChangeQty
 	] = AdminAddProductHook();
-	console.log(brands);
+
 	return (
 		<div>
 			<Row className='justify-content-start '>
