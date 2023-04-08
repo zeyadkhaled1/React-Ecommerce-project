@@ -60,7 +60,7 @@ export const getMainCategory = () => {
 	};
 };
 
-export const createCategory = formData => async dispatch => {
+export const createCategory = (formData) => async (dispatch) => {
 	try {
 		const response = await useInsertDataWithImage('/api/category', formData);
 		dispatch({
