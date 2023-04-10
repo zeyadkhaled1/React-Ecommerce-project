@@ -9,7 +9,7 @@ export const useInsertDataWithImage = async (url, params) => {
 		}
 	};
 	const response = await baseUrl.post(url, params, config);
-	return response.data;
+	return response;
 };
 
 export const useInsertData = async (url, params) => {

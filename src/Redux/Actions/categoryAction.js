@@ -65,7 +65,7 @@ export const createCategory = (formData) => async (dispatch) => {
 		const response = await useInsertDataWithImage('/api/category', formData);
 		dispatch({
 			type: CREATE_CATEGORY,
-			payload: response.category,
+			payload: response,
 			loading: true
 		});
 	} catch (e) {

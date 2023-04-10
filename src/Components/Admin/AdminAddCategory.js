@@ -1,16 +1,21 @@
-import React, { useState } from 'react'
-import { Row,Col } from 'react-bootstrap'
+import React, { useEffect, useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+import { Row,Col, Spinner } from 'react-bootstrap'
 import avatar from '../../Images/avatar.png'
 import { useSelector,useDispatch } from 'react-redux'
 import { createCategory } from '../../Redux/Actions/categoryAction'
 import axios from 'axios'
 export const AdminAddCategory = () => {
-    const dispatch=useDispatch()
-    const[img,setImg]=useState(avatar)
-    const[name,setName]=useState('')
-    const[selectedFile,setSelectedFile]=useState(null)
 
-    const loading=useSelector(state=>state.allcategory.loading)
+    const dispatch=useDispatch()
+    const [img,setImg]=useState(avatar)
+    const [name,setName]=useState('')
+    const [selectedFile,setSelectedFile]=useState(null)
+    const [loading,setLoading]=useState(true)
+    
+
+
 
     const onImageChange=(e)=>{
         if(e.target.files&&e.target.files[0]){
@@ -19,13 +24,49 @@ export const AdminAddCategory = () => {
         }
 
     }
+
+    
+
     const handleSubmit=async(e)=>{
         e.preventDefault()
+        if(name===""||selectedFile===null){
+            notify('أكمل البيانات','warn')
+        }
+        else{
         const formData=new FormData()
         formData.append('title',name)
         formData.append('image',selectedFile)
 
+        setLoading(true)
+        
        await dispatch(createCategory(formData))
+       setLoading(false)
+        }
+    }
+    const res =useSelector(state =>state.allCategory.category)
+    
+
+    useEffect(()=>{
+        if(!loading){
+            setImg(avatar)
+            setName('')
+            setSelectedFile(null)
+            setLoading(true)
+            
+
+            if(res.status===201&&res){
+                notify('تمت عملية الاضافة','success')
+            }
+            else
+            {
+                notify('هناك مشكلة في عملية الاضافة','error')  
+            }
+        }
+    },[loading])
+    const notify = (msg,type) =>{
+       if(type==='warn')  toast.warn(msg)
+       else if(type==='success')  toast.success(msg)
+       else if(type==='error')  toast.error(msg)
     }
     return (
         <div>
@@ -64,6 +105,7 @@ export const AdminAddCategory = () => {
                     <button onClick={handleSubmit} className="btn-save d-inline mt-2 ">حفظ التعديلات</button>
                 </Col>
             </Row>
+            <ToastContainer />
         </div>
     )
 }
