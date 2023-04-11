@@ -1,23 +1,12 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Container, Row,Spinner } from 'react-bootstrap';
 import { SubTitle } from '../Utility/SubTitle';
 import CategoryCard from './../Category/CategoryCard';
 import clothe from "../../Images/clothe.png";
-import cat2 from "../../Images/cat2.png";
-import labtop from "../../Images/labtop.png";
-import sale from "../../Images/sale.png";
-import pic from "../../Images/pic.png";
-import { useDispatch,useSelector } from 'react-redux';
-import { getMainCategory } from '../../Redux/Actions/categoryAction';
-
+import HomeCategoryHook from '../../hook/category/home-category-hook';
 const HomeCategory = () => {
-    const dispatch=useDispatch();
-    useEffect(() => {
-      dispatch(getMainCategory())
-    },[])
-    const parentCategorys =useSelector(state =>state.allCategory.mainCategory)
-    const loading =useSelector(state =>state.allCategory.loading)
     
+    const [parentCategorys,loading]=HomeCategoryHook()
 
     return (
         <Container>

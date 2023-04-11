@@ -3,6 +3,7 @@ import { GET_MAIN_CATEGORY, GET_SUB_CATEGORY, GET_ALL_CATEGORY, GET_CATEGORY,CRE
 const initial = {
 	categorys: [],
 	category: [],
+	createdCategory: [],
 	loading: true
 };
 
@@ -34,8 +35,8 @@ export const categoryReducer = (state = initial, action) => {
 			};
 			case CREATE_CATEGORY:
 				return {
-					
-					category: action.payload,
+					...state,
+					createdCategory: action.payload,
 					loading: false,
 				};
 		default:

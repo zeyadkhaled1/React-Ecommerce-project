@@ -14,7 +14,7 @@ const AdminAddBrandHook = () => {
 	const [isPress, setIsPress] = useState(false);
 
 	const res = useSelector(state => state.allBrand.createdBrand);
-
+	
 	// to change name state
 	const onChangeName = event => {
 		event.persist();
@@ -51,7 +51,7 @@ const AdminAddBrandHook = () => {
 			setSelectedFile(null);
 			setLoading(true);
 			setTimeout(() => setIsPress(false), 1000);
-			if (res.create) notify('تم الاضافة بنجاح', 'success');
+			if (res.status===201) notify('تم الاضافة بنجاح', 'success');
 			else notify('هناك مشكلة', 'error');
 		}
 	}, [loading]);
