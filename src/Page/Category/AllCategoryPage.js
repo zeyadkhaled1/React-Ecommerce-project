@@ -4,11 +4,12 @@ import { Pagination } from '../../Components/Utility/Pagination'
 import AllCategoryHook from '../../hook/category/all-category-page-hook';
 export const AllCategoryPage = () => {
   
-  const [parentCategorys,loading]=AllCategoryHook()
-  return (
-    <div>
-        <CategoryContainer parentCategorys={parentCategorys} loading={loading}/>
-        <Pagination/>
-    </div>
-  )
+  const [Categorys, pageCount, getPage, loading] = AllCategoryHook();
+
+	return (
+		<div>
+			<CategoryContainer data={Categorys} loading={loading} />
+			{pageCount > 1 && <Pagination onPress={getPage} pageCount={pageCount} />}
+		</div>
+	);
 }

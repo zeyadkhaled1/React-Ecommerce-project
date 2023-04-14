@@ -6,7 +6,7 @@ import clothe from "../../Images/clothe.png";
 import HomeCategoryHook from '../../hook/category/home-category-hook';
 const HomeCategory = () => {
     
-    const [parentCategorys,loading]=HomeCategoryHook()
+    const [Categorys,loading]=HomeCategoryHook()
 
     return (
         <Container>
@@ -15,8 +15,8 @@ const HomeCategory = () => {
            
 
             {loading === false ? (
-                parentCategorys.length > 0 ? (
-                    parentCategorys.slice(0,6).map((category, index) => <CategoryCard title={category.title} img={clothe} background="#F4DBA4" />)
+                Categorys.length > 0 ? (
+                    Categorys.slice(0,6).map((category, index) => <CategoryCard key={index} title={category.title} img={category.img} background="#F4DBA4" />)
                 ) : (
                     <h4>لا يوجد تصنيفات</h4>
                 )

@@ -1,15 +1,17 @@
 import { useEffect } from 'react'
 import { useDispatch,useSelector } from 'react-redux';
-import { getMainCategory } from '../../Redux/Actions/categoryAction';
+import { getAllCategory } from '../../Redux/Actions/categoryAction';
 
 const HomeCategoryHook=()=>{
     const dispatch=useDispatch();
     useEffect(() => {
-      dispatch(getMainCategory())
+      dispatch(getAllCategory(`?isParent=false`))
     },[])
-    const parentCategorys =useSelector(state =>state.allCategory.mainCategory)
+    const response =useSelector(state =>state.allCategory.categorys)
     const loading =useSelector(state =>state.allCategory.loading)
     
-    return [parentCategorys,loading]
+    console.log(response)
+    let categorys = response.categories ? response.categories : [];
+    return [categorys,loading]
 }
 export default HomeCategoryHook
