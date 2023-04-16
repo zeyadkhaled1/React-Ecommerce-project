@@ -677,3 +677,8 @@ body {
   color: #212529 !important;
   background-color: white !important;
 }
+#upload-photo {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}

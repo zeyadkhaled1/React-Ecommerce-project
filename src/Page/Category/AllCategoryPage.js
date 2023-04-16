@@ -1,21 +1,15 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { CategoryContainer } from '../../Components/Category/CategoryContainer';
 import { Pagination } from '../../Components/Utility/Pagination';
-import { useDispatch, useSelector } from 'react-redux';
-import { getAllCategory } from '../../Redux/Actions/categoryAction';
+import AllCategoryHook from '../../hook/category/all-category-page-hook';
+
 export const AllCategoryPage = () => {
-	const dispatch = useDispatch();
-	useEffect(() => {
-		dispatch(getAllCategory());
-	}, []);
-	const data = useSelector(state => state.allCategory.categories);
-	const loading = useSelector(state => state.allCategory.loading);
-	console.log(data);
-	console.log(loading);
+	const [Categorys, pageCount, getPage, loading] = AllCategoryHook();
+
 	return (
 		<div>
-			<CategoryContainer />
-			<Pagination />
+			<CategoryContainer data={Categorys} loading={loading} />
+			{pageCount > 1 && <Pagination onPress={getPage} pageCount={pageCount} />}
 		</div>
 	);
 };
