@@ -9,22 +9,23 @@ import { useGetData } from '../../Hooks/useGetData';
 import { useInsertDataWithImage } from './../../Hooks/useInsertData';
 import { GET_CATEGORY } from './../Type';
 
-export const getAllCategory = () => {
-	return async dispatch => {
-		try {
-			const response = await useGetData('/api/category');
-			dispatch({
-				type: GET_ALL_CATEGORY,
-				payload: response
-			});
-		} catch (e) {
-			dispatch({
-				type: GET_ERROR,
-				payload: 'ERROR' + e
-			});
-		}
-	};
+export const getAllCategory = query => {
+    return async dispatch => {
+        try {
+            const response = await useGetData(`/api/category${query ? query : ''}`);
+            dispatch({
+                type: GET_ALL_CATEGORY,
+                payload: response
+            });
+        } catch (e) {
+            dispatch({
+                type: GET_ERROR,
+                payload: 'ERROR' + e
+            });
+        }
+    };
 };
+
 
 export const getCategory = id => async dispatch => {
 	try {
@@ -42,7 +43,7 @@ export const getCategory = id => async dispatch => {
 };
 
 export const getMainCategory = () => {
-	return async dispatch => {
+	return async dispatch => {	
 		try {
 			const response = await useGetData('/api/category?main=true');
 			dispatch({

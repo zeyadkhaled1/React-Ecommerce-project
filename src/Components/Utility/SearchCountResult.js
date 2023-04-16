@@ -1,9 +1,13 @@
 import React from 'react'
 import UnopDropdown from "unop-react-dropdown";
 import sort from '../../Images/sort.png'
-export const SearchCountResult = ({title}) => {
+export const SearchCountResult = ({title,onClick}) => {
     const handler=()=> {
 
+    }
+    const clickTrigger=(key)=>{
+        localStorage.setItem("sortType",key)
+        onClick()
     }
     return (
         <div className="d-flex justify-content-between pt-3 px-2">
@@ -28,12 +32,13 @@ export const SearchCountResult = ({title}) => {
                     align="CENTER"
                     hover>
                     <div className="card-filter">
-                        <div className="border-bottom card-filter-item">الاكثر مبيعا</div>
-                        <div className="border-bottom card-filter-item">الاعلي تقييما</div>
-                        <div className="border-bottom card-filter-item">
+                        <div onClick={()=>clickTrigger("")} className="border-bottom card-filter-item">بدون ترتيب</div>
+                        <div onClick={()=>clickTrigger("الاكثر مبيعا")} className="border-bottom card-filter-item">الاكثر مبيعا</div>
+                        <div onClick={()=>clickTrigger("الاعلي تقييما")} className="border-bottom card-filter-item">الاعلي تقييما</div>
+                        <div onClick={()=>clickTrigger("السعر من الاقل للاعلي")} className="border-bottom card-filter-item">
                             السعر من الاقل للاعلي
                         </div>
-                        <div className=" card-filter-item">السعر من الاعلي للاقل</div>
+                        <div onClick={()=>clickTrigger("السعر من الاعلي للاقل")} className=" card-filter-item">السعر من الاعلي للاقل</div>
                     </div>
                 </UnopDropdown>
             </div>

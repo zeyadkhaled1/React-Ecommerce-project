@@ -12,8 +12,8 @@ const ViewHomeProductsHook = () => {
 	const bestSellerRes = useSelector(state => state.allProduct.bestSeller);
 	const mostRecentRes = useSelector(state => state.allProduct.mostRecent);
 
-	let bestSellerItems = bestSellerRes.data ? bestSellerRes.data.items : [];
-	let mostRecentItems = mostRecentRes.data ? mostRecentRes.data.items : [];
+	let bestSellerItems = bestSellerRes&&bestSellerRes.data ? bestSellerRes.data.items : [];
+	let mostRecentItems = mostRecentRes&&mostRecentRes.data ? mostRecentRes.data.items : [];
 
 	return [bestSellerItems, mostRecentItems];
 };

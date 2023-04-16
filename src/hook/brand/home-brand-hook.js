@@ -11,7 +11,7 @@ const ViewHomeBrandsHook = () => {
 	const response = useSelector(state => state.allBrand.brands);
 	const loading = useSelector(state => state.allBrand.loading);
 
-	let brands = response.data ? response.data.brands : [];
+	let brands = response&&response.data ? response.data.brands : [];
 
 	return [brands, loading];
 };

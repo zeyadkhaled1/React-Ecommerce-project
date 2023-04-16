@@ -677,3 +677,42 @@ body {
   color: #212529 !important;
   background-color: white !important;
 }
+
+/* 
+Edits
+ */
+ .list-basic{
+   font-size: 14px;
+   list-style-type: none;
+   color: #555550;
+   font-family: "Almarai";
+   font-weight: bold;
+   cursor: pointer;
+ }
+.list-basic:hover,.list-basic-nested:hover{
+ text-decoration: underline;
+}
+.list-basic-nested{
+  font-size: 12px;
+  list-style-type: none;
+  color: #555550;
+  font-family: "Almarai";
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.list-basic:hover .list-basic-nested {
+  text-decoration: none !important;
+}
+
+li:hover > span {
+  text-decoration: none;
+}
+
+ul {
+  transition: all 0.3s ease-in-out;
+}
+ul.active {
+  max-height: 200px; /* or any value higher than the actual height of the element */
+  overflow: hidden;
+}
