@@ -3,6 +3,7 @@ import logo from '../../Images/logo.png';
 import cart from '../../Images/cart.png';
 import login from '../../Images/login.png';
 import { Navbar, Container, Nav, FormControl, NavDropdown } from 'react-bootstrap';
+import { NavbarSearchHook } from '../../hook/search/navbar-search-hook';
 
 export const NavBarLogin = () => {
 	const [user, setUser] = useState('');
@@ -16,7 +17,7 @@ export const NavBarLogin = () => {
 		localStorage.removeItem('user');
 		setUser('');
 	};
-
+	const [onChangeSearch,searchWord]= NavbarSearchHook()
 	return (
 		<Navbar className='sticky-top' bg='dark' variant='dark' expand='sm'>
 			<Container>
@@ -28,6 +29,8 @@ export const NavBarLogin = () => {
 				<Navbar.Toggle aria-controls='basic-navbar-nav' />
 				<Navbar.Collapse id='basic-navbar-nav'>
 					<FormControl
+					value={searchWord||localStorage.getItem("searchWord")}
+					onChange={onChangeSearch}
 						type='search'
 						placeholder='ابحث...'
 						className='me-2 w-100 text-center'
