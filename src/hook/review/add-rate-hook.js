@@ -22,6 +22,7 @@ const AddRateHook = id => {
 
 	const onSubmit = async () => {
 		if (rateText === '') return notify('من فضلك اكتب تعليق!', 'error');
+		if (rateValue === 0) return notify('من فضلك اكتب تعليق!', 'error');
 		setLoading(true);
 		await dispatch(
 			createReview({
@@ -38,11 +39,11 @@ const AddRateHook = id => {
 	useEffect(() => {
 		if (!loading) {
 			if (res) {
-				console.log(res);
 				if (res.status >= 400) {
 					notify(res.data.message, 'error');
-				} else if (res.state >= 200 && res.status < 300) {
+				} else if (res.status >= 200 && res.status < 300) {
 					notify('تم التعليق بنجاح', 'success');
+					setTimeout(() => window.location.reload(), 1500);
 				}
 			}
 		}

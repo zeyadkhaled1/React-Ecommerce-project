@@ -8,6 +8,8 @@ const ViewAllReviewHook = id => {
 	const dispatch = useDispatch();
 	const [loading, setLoading] = useState(true);
 
+	const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : undefined;
+
 	const res = useSelector(state => state.allReview.reviews);
 
 	const allReviews = res && res.data && res.data.rates ? res.data.rates : [];
@@ -15,12 +17,12 @@ const ViewAllReviewHook = id => {
 
 	useEffect(() => {
 		setLoading(true);
-		dispatch(getAllReview(id, 1, 4));
+		dispatch(getAllReview(id, 1, 4, user ? user._id : undefined));
 		setLoading(false);
 	}, []);
 
 	const onPress = async page => {
-		await dispatch(getAllReview(id, page, 4));
+		await dispatch(getAllReview(id, page, 4, user ? user._id : undefined));
 	};
 
 	return [allReviews, pagination, onPress];

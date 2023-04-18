@@ -5,8 +5,18 @@ import { Row, Col, Spinner } from 'react-bootstrap';
 import AddCategoryHook from '../../hook/category/add-category-hook';
 
 export const AdminAddCategory = () => {
-	const [img, name, loading, isPress, handleSubmit, onImageChange, onNameChange] =
-		AddCategoryHook();
+	const [
+		img,
+		name,
+		catID,
+		loading,
+		isPress,
+		mainCategories,
+		handleSubmit,
+		onImageChange,
+		onNameChange,
+		onSelectMainCategory
+	] = AddCategoryHook();
 
 	return (
 		<div>
@@ -27,6 +37,20 @@ export const AdminAddCategory = () => {
 						placeholder='اسم التصنيف'
 						onChange={onNameChange}
 					/>
+					<div className='form-floating mt-3'>
+						<select
+							name='mainCategories'
+							id='mainCategory'
+							className='form-select'
+							value={catID}
+							onChange={onSelectMainCategory}>
+							<option value='0'>اختر تصنيف</option>
+							{mainCategories
+								? mainCategories.map(item => <option value={item._id}>{item.title}</option>)
+								: null}
+						</select>
+						<label for='mainCategory'>التصنيف الرئيسي</label>
+					</div>
 				</Col>
 			</Row>
 			<Row>

@@ -11,8 +11,6 @@ export const RateContainer = ({ item }) => {
 	const { id } = useParams();
 	const [allReviews, pagination, onPress] = ViewAllReviewHook(id);
 
-	console.log(allReviews, pagination);
-
 	return (
 		<Container className='rate-container'>
 			<Row>
