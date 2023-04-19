@@ -5,10 +5,12 @@ import {
 	GET_USER,
 	LOGIN_USER,
 	REFRESH_TOKEN,
-	RESET_PASSWORD
+	RESET_PASSWORD,
+	UPDATE_USER
 } from '../Type';
 import { useInsertData } from './../../Hooks/useInsertData';
 import { useGetData } from './../../Hooks/useGetData';
+import { useUpdateData } from '../../Hooks/useUpdateData';
 
 export const createNewUser = data => async dispatch => {
 	try {
@@ -21,6 +23,22 @@ export const createNewUser = data => async dispatch => {
 	} catch (e) {
 		dispatch({
 			type: CREATE_NEW_USER,
+			payload: e.response
+		});
+	}
+};
+
+export const editUser = data => async dispatch => {
+	try {
+		const response = await useUpdateData('/api/user/me', data);
+		dispatch({
+			type: UPDATE_USER,
+			payload: response,
+			loading: true
+		});
+	} catch (e) {
+		dispatch({
+			type: UPDATE_USER,
 			payload: e.response
 		});
 	}

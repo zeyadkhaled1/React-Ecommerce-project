@@ -2,32 +2,40 @@ body {
   margin: 0;
   font-family: "Almarai", sans-serif;
 }
+
 .m-0 {
   margin: 0;
 }
+
 .p-0 {
   padding: 0;
 }
+
 .font {
   font-family: "Almarai", sans-serif;
   background-color: #f9f9f9;
 }
+
 .hieght-search {
   height: 80vh;
 }
+
 .logo {
   height: 46px;
   width: 50px;
 }
+
 .login-img {
   height: 20px;
   width: 20px;
 }
+
 .nav-text {
   color: #ffffff;
   font-size: 12px;
   font-weight: bold;
 }
+
 .sub-tile {
   color: #272727;
   font-family: Almarai;
@@ -42,21 +50,25 @@ body {
   height: "296px";
   width: 294.26px;
 }
+
 .slider-background2 {
   background: linear-gradient(174.76deg, #d3deff 0%, #a8baff 100%);
   height: "296px";
   width: 294.26px;
 }
+
 .slider-background3 {
   background: linear-gradient(176.69deg, #f8f0d5 0%, #efdcab 100%);
   height: "296px";
   width: 294.26px;
 }
+
 .slider-background4 {
   background: linear-gradient(175.24deg, #b2e8f0 0%, #7bccdc 100%);
   height: "296px";
   width: 294.26px;
 }
+
 .slider-title {
   color: #915970;
   font-family: Almarai;
@@ -65,6 +77,7 @@ body {
   line-height: 32px;
   text-align: center;
 }
+
 .slider-text {
   color: #915970;
   font-family: Almarai;
@@ -74,11 +87,13 @@ body {
   line-height: 53px;
   text-align: center;
 }
+
 .allCard {
   position: relative;
   height: 130px;
   width: 130px;
 }
+
 .categoty-card {
   height: 140px;
   width: 100%;
@@ -93,6 +108,7 @@ body {
   top: 20%;
   left: 10%;
 }
+
 .categoty-card-text {
   color: #555550;
   font-family: Almarai;
@@ -111,6 +127,7 @@ body {
   line-height: 20px;
   text-align: right;
 }
+
 .card-price {
   color: #272727;
   font-family: Almarai;
@@ -119,6 +136,7 @@ body {
   letter-spacing: 0;
   line-height: 28px;
 }
+
 .card-currency {
   color: #555550;
   font-family: Almarai;
@@ -126,6 +144,7 @@ body {
   letter-spacing: 0;
   line-height: 24px;
 }
+
 .card-rate {
   color: #ffc107;
   font-family: Almarai;
@@ -134,6 +153,7 @@ body {
   letter-spacing: 0;
   line-height: 19px;
 }
+
 /* end of card style */
 .shopping-now {
   padding: 5px;
@@ -160,6 +180,7 @@ body {
   border-radius: 8px;
   background: radial-gradient(circle, #767676 0%, #4d4f50 100%, #494c4d 100%);
 }
+
 .discount-title {
   color: #ffffff;
   font-family: Cairo;
@@ -168,10 +189,12 @@ body {
   letter-spacing: 0;
   line-height: 39px;
 }
+
 .dicount-img {
   max-height: 130px;
   max-width: 80%;
 }
+
 /* end discount */
 
 /* foter */
@@ -182,6 +205,7 @@ body {
 .footer {
   width: 100%;
 }
+
 .footer-shroot {
   color: #979797;
   font-family: Almarai;
@@ -200,6 +224,7 @@ body {
   text-align: right;
   cursor: pointer;
 }
+
 /* end footer */
 
 /* card filter style */
@@ -212,6 +237,7 @@ body {
   line-height: 20px;
   text-align: right;
 }
+
 .card-filter {
   background-color: #ffffff;
   border-radius: 10px;
@@ -225,10 +251,12 @@ body {
   font-weight: 400;
   padding: 10px;
 }
+
 .card-filter-item:hover {
   background-color: #272727;
   color: #ffffff;
 }
+
 /* end card filter */
 
 /* products details page */
@@ -282,6 +310,7 @@ body {
   width: 30px;
   border-radius: 50%;
 }
+
 .product-description {
   color: #555550;
   font-family: "Almarai", sans-serif;
@@ -291,6 +320,7 @@ body {
   line-height: 26px;
   text-align: right;
 }
+
 .product-price {
   height: 46px;
   width: 150px;
@@ -317,15 +347,18 @@ body {
   font-size: 14px;
   font-weight: normal;
 }
+
 .product-cart-add:hover {
   color: #bdbaba !important;
 }
+
 /* products gallary slide style */
 .image-gallery-slide {
   width: 372px;
   height: 470px;
   border-radius: 29px;
 }
+
 /* end gallary */
 /* end products page */
 
@@ -336,11 +369,13 @@ body {
   border-radius: 10px !important;
   border: solid 1px 272727 !important;
 }
+
 .page-link:hover {
   background-color: #272727 !important;
   color: white !important;
   border: solid 1px 272727 !important;
 }
+
 /* end pagination */
 
 /* category header */
@@ -360,6 +395,7 @@ body {
   margin-left: 17px;
   cursor: pointer;
 }
+
 .cat-text-header:hover {
   color: #555550;
 }
@@ -375,6 +411,7 @@ body {
   border: 1px solid #979797;
   border-radius: 8px;
 }
+
 .title-login {
   color: #555550;
   font-family: Almarai;
@@ -384,6 +421,7 @@ body {
   line-height: 28px;
   text-align: right;
 }
+
 .btn-login {
   height: 46px;
   width: 374px;
@@ -392,6 +430,7 @@ body {
   color: white;
   background-color: #272727;
 }
+
 .btn-login:hover {
   color: rgb(206, 204, 204);
 }
@@ -408,12 +447,14 @@ body {
   line-height: 28px;
   text-align: right;
 }
+
 .cart-item-body {
   height: 229px;
   width: 100%;
   border-radius: 20px;
   background-color: #ffffff;
 }
+
 .copon-input {
   box-sizing: border-box;
   height: 46px;
@@ -423,6 +464,7 @@ body {
   font-size: 12px;
   font-weight: normal;
 }
+
 .copon-btn {
   cursor: pointer;
   border: none;
@@ -475,6 +517,7 @@ body {
   color: white;
   font-size: 14px;
 }
+
 .admin-content-text {
   color: #555550;
   font-family: Almarai;
@@ -484,6 +527,7 @@ body {
   line-height: 28px;
   text-align: right;
 }
+
 .item-delete-edit {
   color: #979797;
   font-family: "Almarai";
@@ -502,6 +546,7 @@ body {
   line-height: 20px;
   text-align: right;
 }
+
 .input-form {
   height: 37px;
   width: 100%;
@@ -509,12 +554,14 @@ body {
   border-radius: 8px;
   background-color: #f9f9f9;
 }
+
 .input-form-area {
   width: 100%;
   border: 1px solid #979797;
   border-radius: 8px;
   background-color: #f9f9f9;
 }
+
 .select {
   box-sizing: border-box;
   height: 40px;
@@ -523,6 +570,7 @@ body {
   border: 1px solid #979797;
   border-radius: 8px;
 }
+
 .btn-save {
   border: none;
   color: white;
@@ -531,9 +579,11 @@ body {
   border-radius: 9px;
   background-color: #272727;
 }
+
 .btn-save:hover {
   color: rgb(164, 164, 164);
 }
+
 .btn-a {
   border: none;
   color: white;
@@ -541,9 +591,11 @@ body {
   border-radius: 9px;
   background-color: #272727;
 }
+
 .btn-a:hover {
   color: rgb(164, 164, 164);
 }
+
 /* end admin  */
 
 /* rates  */
@@ -556,6 +608,7 @@ body {
   background-color: #ffffff;
   box-shadow: 0 1px 2px 0 rgba(151, 151, 151, 0.5);
 }
+
 .rate-count {
   color: #979797;
   font-family: "Almarai";
@@ -563,6 +616,7 @@ body {
   letter-spacing: 0;
   line-height: 23px;
 }
+
 .rate-name {
   color: #555550;
   font-family: "Almarai";
@@ -571,6 +625,7 @@ body {
   letter-spacing: 0;
   line-height: 19px;
 }
+
 .rate-description {
   color: #555550;
   font-family: "Almarai";
@@ -579,6 +634,7 @@ body {
   line-height: 19px;
   text-align: right;
 }
+
 /* end rate */
 
 /* user order */
@@ -589,6 +645,7 @@ body {
   background-color: #ffffff;
   box-shadow: 0 1px 2px 0 rgba(151, 151, 151, 0.5);
 }
+
 .order-title {
   color: #272727;
   font-family: "Almarai";
@@ -604,6 +661,7 @@ body {
   line-height: 30px;
   text-align: right;
 }
+
 /* end user order */
 
 /* user Address */
@@ -616,6 +674,13 @@ body {
   background-color: #ffffff;
   box-shadow: 0 1px 2px 0 rgba(151, 151, 151, 0.5);
 }
+
+.user-profile-card {
+  border-radius: 7px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px 0 rgba(151, 151, 151, 0.5);
+}
+
 .btn-add-address {
   border: none;
   height: 50px;
@@ -635,6 +700,7 @@ body {
   background-color: #ffffff;
   box-shadow: 0 1px 2px 0 rgba(151, 151, 151, 0.5);
 }
+
 /* end user data */
 
 /* filter side style */
@@ -647,6 +713,7 @@ body {
   line-height: 20px;
   text-align: right;
 }
+
 .filter-sub {
   color: #555550;
   font-family: "Almarai";
@@ -655,6 +722,7 @@ body {
   line-height: 17px;
   text-align: center;
 }
+
 /* end filter */
 .dropdown-toggle {
   color: white !important;
@@ -677,15 +745,17 @@ body {
   color: #212529 !important;
   background-color: white !important;
 }
+
 #upload-photo {
   opacity: 0;
   position: absolute;
   z-index: -1;
 }
+
 /* 
 Edits
  */
-.list-basic{
+.list-basic {
   font-size: 14px;
   list-style-type: none;
   color: #555550;
@@ -693,10 +763,13 @@ Edits
   font-weight: bold;
   cursor: pointer;
 }
-.list-basic:hover,.list-basic-nested:hover{
+
+.list-basic:hover,
+.list-basic-nested:hover {
   text-decoration: underline;
 }
-.list-basic-nested{
+
+.list-basic-nested {
   font-size: 12px;
   list-style-type: none;
   color: #555550;
@@ -709,14 +782,16 @@ Edits
   text-decoration: none !important;
 }
 
-li:hover > span {
+li:hover>span {
   text-decoration: none;
 }
 
 ul {
   transition: all 0.3s ease-in-out;
 }
+
 ul.active {
-  max-height: 200px; /* or any value higher than the actual height of the element */
+  max-height: 200px;
+  /* or any value higher than the actual height of the element */
   overflow: hidden;
 }
