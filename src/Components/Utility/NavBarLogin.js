@@ -71,10 +71,13 @@ export const NavBarLogin = () => {
 
 						<Nav.Link
 							href='/cart'
-							className='nav-text d-flex mt-3 justify-content-center'
+							className='nav-text d-flex mt-3 position-relative justify-content-center'
 							style={{ color: 'white' }}>
 							<img src={cart} className='login-img' alt='sfvs' />
-							<p style={{ color: 'white' }}>العربه</p>
+							<p style={{ color: 'white' }}>العربة</p>
+							<span class="position-absolute top-15 start-100 translate-middle badge rounded-pill bg-danger">
+								0
+							</span>
 						</Nav.Link>
 					</Nav>
 				</Navbar.Collapse>
