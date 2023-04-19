@@ -67,9 +67,13 @@ function UserProfileHook() {
 					notify('تم تغير كلمة السر بنجاح', 'success');
 					setOldPassword('');
 					setNewPassword('');
+					navigate('/user/profile?refresh=true');
+					setTimeout(() => window.location.reload(), 1000);
 				} else {
 					notify(
-						changePasswordRes.data.message ? changePasswordRes.data.message : 'حدثت مشكلة ما',
+						changePasswordRes.data && changePasswordRes.data.message
+							? changePasswordRes.data.message
+							: 'حدثت مشكلة ما',
 						'error'
 					);
 					setOldPassword('');
@@ -83,7 +87,6 @@ function UserProfileHook() {
 		user,
 		oldPassword,
 		newPassword,
-		loading,
 		onChangeOldPassword,
 		onChangeNewPassword,
 		handleChangePassword

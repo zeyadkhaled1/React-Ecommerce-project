@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Row, Col, Modal, Button } from 'react-bootstrap';
 import rate from '../../Images/rate.png';
 import deleteIcon from '../../Images/delete.png';
@@ -81,7 +81,7 @@ export const RateItem = ({ review }) => {
 					<Button className='font' variant='success' onClick={handleCloseEdit}>
 						تراجع
 					</Button>
-					<Button className='font' variant='danger' onClick={handleEdit}>
+					<Button className='font' variant='dark' onClick={handleEdit}>
 						تعديل
 					</Button>
 				</Modal.Footer>

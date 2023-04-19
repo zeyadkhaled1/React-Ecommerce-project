@@ -13,6 +13,9 @@ function RegisterHook() {
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
 	const [phone, setPhone] = useState('');
+	const [gender, setGender] = useState('');
+	const [address, setAddress] = useState('');
+	const [birthday, setBirthday] = useState('');
 	const [password, setPassword] = useState('');
 	const [confirmPassword, setConfirmPassword] = useState('');
 	const [loading, setLoading] = useState(false);
@@ -37,12 +40,27 @@ function RegisterHook() {
 		setConfirmPassword(e.target.value);
 	};
 
+	const onChangeAddress = e => {
+		setAddress(e.target.value);
+	};
+
+	const onChangeGender = e => {
+		setGender(e.target.value);
+	};
+
+	const onChangeBirthday = e => {
+		setBirthday(e.target.value);
+	};
+
 	const validationValues = data => {
 		if (
 			name.length < 1 ||
 			phone.length < 1 ||
 			email.length < 1 ||
 			password.length < 1 ||
+			address.length < 1 ||
+			gender.length < 1 ||
+			birthday.length < 1 ||
 			confirmPassword.length < 1
 		)
 			return 'من فضلك ادخل البيانات المطلوبة';
@@ -97,10 +115,11 @@ function RegisterHook() {
 			name,
 			email,
 			phoneNumber: phone,
+			birthday,
+			gender,
+			address,
 			password,
 			confirmPassword
-			// birthday,
-			// gender
 		};
 		const error = validationValues(data);
 		if (error) return notify(error, 'error');
@@ -132,12 +151,17 @@ function RegisterHook() {
 		name,
 		email,
 		phone,
+		address,
+		birthday,
 		password,
 		confirmPassword,
 		loading,
 		onChangeName,
 		onChangeEmail,
 		onChangePhone,
+		onChangeGender,
+		onChangeAddress,
+		onChangeBirthday,
 		onChangePassword,
 		onChangeConfirmPassword,
 		onSubmit
