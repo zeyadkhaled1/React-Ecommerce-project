@@ -2,29 +2,27 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import notify from '../useNotification';
 import avatar from './../../Images/avatar.png';
-import { addToCart } from '../../Redux/Actions/cartAction';
+import { deleteItemFromCart } from '../../Redux/Actions/cartAction';
 
-const AddToCartHook=(id)=>{
+const DeleteItemFromCartHook=(id)=>{
     const dispatch = useDispatch();
 	const [loading, setLoading] = useState(true);
 
-	const res = useSelector(state => state.cartReducer.addToCart);
+	const res = useSelector(state => state.cartReducer.deleteItemFromCart);
 
-    const addToCartHandel=async()=>{
+    const deleteItemFromCartHandel=async()=>{
         setLoading(true)
-        await dispatch(addToCart({
-            quantity: "1"
-        },id))
+        await dispatch(deleteItemFromCart(id))
         setLoading(false)
     }
 
     useEffect(()=>{
         if(loading===false){
             if(res&&res.status===200){
-                notify('تم اضافة المنتج للعربة بنجاح','success')
+                notify('تم حذف المنتج من العربة بنجاح','success')
                 setTimeout(()=>{
                     window.location.reload(true)
-                },1000)
+                },500)
             }
             else{
                 notify('هناك خطأ ما','warn')
@@ -32,7 +30,7 @@ const AddToCartHook=(id)=>{
         }
     },[loading])
 
-    return [addToCartHandel]
+    return [deleteItemFromCartHandel]
 
 }
-export default AddToCartHook
+export default DeleteItemFromCartHook
