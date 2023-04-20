@@ -4,9 +4,11 @@ import cart from '../../Images/cart.png';
 import login from '../../Images/login.png';
 import { Navbar, Container, Nav, FormControl, NavDropdown } from 'react-bootstrap';
 import { NavbarSearchHook } from '../../hook/search/navbar-search-hook';
+import GetAllUserCartHook from '../../hook/Cart/get-all-user-cart-hook';
 
 export const NavBarLogin = () => {
 	const [user, setUser] = useState('');
+	const [itemsNum]=GetAllUserCartHook();
 
 	useEffect(() => {
 		if (localStorage.getItem('user')) setUser(JSON.parse(localStorage.getItem('user')));
@@ -71,10 +73,13 @@ export const NavBarLogin = () => {
 
 						<Nav.Link
 							href='/cart'
-							className='nav-text d-flex mt-3 justify-content-center'
+							className='nav-text d-flex mt-3 position-relative justify-content-center'
 							style={{ color: 'white' }}>
 							<img src={cart} className='login-img' alt='sfvs' />
-							<p style={{ color: 'white' }}>العربه</p>
+							<p style={{ color: 'white' }}>العربة</p>
+							<span class="position-absolute top-15 start-100 translate-middle badge rounded-pill bg-danger">
+								{itemsNum || 0}
+							</span>
 						</Nav.Link>
 					</Nav>
 				</Navbar.Collapse>

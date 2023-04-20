@@ -2,11 +2,12 @@ import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import ViewProductDetailsHook from './../../hook/product/view-product-details-hook';
+import AddToCartHook from '../../hook/Cart/add-to-cart-hook';
 
 export const ProductText = () => {
 	const { id } = useParams();
 	const [item, images, similarItem, similarCategories] = ViewProductDetailsHook(id);
-
+	const [addToCartHandel]=AddToCartHook(id);
 	return (
 		<div>
 			<Row className='mt-2'>
@@ -44,7 +45,7 @@ export const ProductText = () => {
 					<div className='product-price d-inline px-3 py-3 border'>
 						{item && item.price ? item.price : 0} جنية
 					</div>
-					<div className='product-cart-add px-3 py-3 d-inline mx-3'>اضف للعربة</div>
+					<div onClick={addToCartHandel} className='product-cart-add px-3 py-3 d-inline mx-3'>اضف للعربة</div>
 				</Col>
 			</Row>
 		</div>
