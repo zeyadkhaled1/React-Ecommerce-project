@@ -6,7 +6,6 @@ import GetAllUserCartHook from '../../hook/Cart/get-all-user-cart-hook'
 
 export const CartPage = () => {
     const [itemsNum,cartItems,totalCartPrice]=GetAllUserCartHook()
-    console.log(cartItems)
   return (
     <Container style={{minHeight:'670px'}}>
         <Row>

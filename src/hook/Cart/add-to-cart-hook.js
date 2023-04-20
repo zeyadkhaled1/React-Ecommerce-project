@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import notify from '../useNotification';
-import avatar from './../../Images/avatar.png';
 import { addToCart } from '../../Redux/Actions/cartAction';
 
 const AddToCartHook=(id)=>{
+    const user=JSON.parse(localStorage.getItem("user"))
     const dispatch = useDispatch();
 	const [loading, setLoading] = useState(true);
 
@@ -26,8 +26,10 @@ const AddToCartHook=(id)=>{
                     window.location.reload(true)
                 },1000)
             }
+            else if(!user){
+                notify('يرجى تسجيل الدخول أولا','warn')}
             else{
-                notify('هناك خطأ ما','warn')
+                notify('هناك خطأ ما','error')
             }
         }
     },[loading])

@@ -57,7 +57,6 @@ export const deleteItemFromCart = (id) => async dispatch => {
 export const updateItemInCart = (id,body) => async dispatch => {
 	try {
 		const response = await useUpdateData(`/api/cart/${id}`,body);
-        console.log(response)
 		dispatch({
 			type: UPDATE_ITEM_IN_CART,
 			payload: response,
