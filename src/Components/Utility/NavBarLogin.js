@@ -47,11 +47,7 @@ export const NavBarLogin = () => {
 								<NavDropdown.Item href='/user/profile'>الصفحة الشخصية</NavDropdown.Item>
 								{user && user.accountType === 'admin' ? (
 									<div>
-										<NavDropdown.Item href='/admin/allorders'>ادارة الطلبات</NavDropdown.Item>
-										<NavDropdown.Item href='/admin/allproducts'>ادارة المنتجات</NavDropdown.Item>
-										<NavDropdown.Item href='/admin/addcategory'>اضافة تصنيف</NavDropdown.Item>
-										<NavDropdown.Item href='/admin/addbrand'>اضافة ماركة</NavDropdown.Item>
-										<NavDropdown.Item href='/admin/addproduct'>اضافة منتج</NavDropdown.Item>
+										<NavDropdown.Item href='/admin/allorders'>ادارة الموقع</NavDropdown.Item>
 									</div>
 								) : null}
 								{user && user.accountType === 'vendor' ? (

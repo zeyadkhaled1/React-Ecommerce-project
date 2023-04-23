@@ -4,11 +4,9 @@ import moment from 'moment';
 import notify from './../useNotification';
 import { useDispatch, useSelector } from 'react-redux';
 import { createNewUser } from './../../Redux/Actions/authAction';
-import { useNavigate } from 'react-router-dom';
 
 function RegisterHook() {
 	const dispatch = useDispatch();
-	const navigate = useNavigate();
 
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
@@ -78,7 +76,7 @@ function RegisterHook() {
 				.message('من فضلك ادخل ايميل صحيح')
 				.required(),
 			phoneNumber: Joi.string()
-				.pattern(/^([\+][2])?[0][1][0125][0-9]{8}$/)
+				.pattern(/^([+][2])?[0][1][0125][0-9]{8}$/)
 				.message('من فضلك ادخل رقم صحيح')
 				.required(),
 			password: Joi.string()
