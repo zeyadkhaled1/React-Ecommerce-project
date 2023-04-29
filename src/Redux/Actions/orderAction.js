@@ -5,7 +5,7 @@ import { useGetData } from '../../Hooks/useGetData';
 export const getAllOrders = (page, pageSize, sort) => async dispatch => {
 	try {
 		const response = await useGetData(
-			`/api/order?pageNumber=${page || 1}&pageSize=${pageSize || 12}&sort=${sort || '_id'}`
+			`/api/order?pageNumber=${page || 1}&pageSize=${pageSize || 12}&sort=${sort || '-_id'}`
 		);
 		dispatch({
 			type: GET_ALL_ORDER,
