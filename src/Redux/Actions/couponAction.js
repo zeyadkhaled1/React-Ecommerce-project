@@ -1,4 +1,4 @@
-import { CREATE_COUPON, GET_ALL_COUPON, UPDATE_COUPON } from '../Type';
+import { APPLY_COUPON, CANCEL_COUPON, CREATE_COUPON, GET_ALL_COUPON, UPDATE_COUPON } from '../Type';
 import { useInsertData } from '../../Hooks/useInsertData';
 import { useGetData } from './../../Hooks/useGetData';
 import { useUpdateData } from '../../Hooks/useUpdateData';
@@ -64,6 +64,38 @@ export const deleteCoupon = id => async dispatch => {
 	} catch (e) {
 		dispatch({
 			type: DELETE_COUPON,
+			payload: e.response
+		});
+	}
+};
+
+export const applyCoupon = body => async dispatch => {
+	try {
+		const response = await useInsertData(`/api/coupon/apply-coupon`, body);
+		dispatch({
+			type: APPLY_COUPON,
+			payload: response,
+			loading: true
+		});
+	} catch (e) {
+		dispatch({
+			type: APPLY_COUPON,
+			payload: e.response
+		});
+	}
+};
+
+export const cancelCoupon = body => async dispatch => {
+	try {
+		const response = await useInsertData(`/api/coupon/cancel-coupon`, body);
+		dispatch({
+			type: CANCEL_COUPON,
+			payload: response,
+			loading: true
+		});
+	} catch (e) {
+		dispatch({
+			type: CANCEL_COUPON,
 			payload: e.response
 		});
 	}

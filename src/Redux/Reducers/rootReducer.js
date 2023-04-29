@@ -7,6 +7,7 @@ import { reviewReducer } from './reviewReducer';
 import { wishlistReducer } from './wishlistReducer';
 import { cartReducer } from './cartReducer';
 import { couponReducer } from './couponReducer';
+import { orderReducer } from './orderReducer';
 
 export const rootReducer = combineReducers({
 	auth: authReducer,
@@ -16,5 +17,6 @@ export const rootReducer = combineReducers({
 	allReview: reviewReducer,
 	allWishlist: wishlistReducer,
 	cartReducer: cartReducer,
-	couponReducer: couponReducer
+	couponReducer: couponReducer,
+	orderReducer: orderReducer
 });

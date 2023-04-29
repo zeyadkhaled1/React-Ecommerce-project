@@ -50,5 +50,12 @@ export const GET_ALL_COUPON = 'GET_ALL_COUPON';
 export const CREATE_COUPON = 'CREATE_COUPON';
 export const UPDATE_COUPON = 'UPDATE_COUPON';
 export const DELETE_COUPON = 'DELETE_COUPON';
+export const APPLY_COUPON = 'APPLY_COUPON';
+export const CANCEL_COUPON = 'CANCEL_COUPON';
+
+export const GET_ALL_ORDER = 'GET_ALL_ORDER';
+export const CREATE_ORDER = 'CREATE_ORDER';
+export const UPDATE_ORDER = 'UPDATE_ORDER';
+export const DELETE_ORDER = 'DELETE_ORDER';
 
 export const GET_ERROR = 'GET-ERROR';

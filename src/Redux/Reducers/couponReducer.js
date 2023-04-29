@@ -1,4 +1,11 @@
-import { CREATE_COUPON, DELETE_COUPON, GET_ALL_COUPON, UPDATE_COUPON } from '../Type';
+import {
+	APPLY_COUPON,
+	CANCEL_COUPON,
+	CREATE_COUPON,
+	DELETE_COUPON,
+	GET_ALL_COUPON,
+	UPDATE_COUPON
+} from '../Type';
 
 const initial = {
 	coupons: [],
@@ -6,6 +13,8 @@ const initial = {
 	couponCreated: [],
 	couponUpdated: [],
 	couponDeleted: [],
+	couponApplied: [],
+	couponCanceled: [],
 	loading: true
 };
 
@@ -36,6 +45,20 @@ export const couponReducer = (state = initial, action) => {
 			return {
 				...state,
 				couponDeleted: action.payload,
+				loading: false
+			};
+
+		case APPLY_COUPON:
+			return {
+				...state,
+				couponApplied: action.payload,
+				loading: false
+			};
+
+		case CANCEL_COUPON:
+			return {
+				...state,
+				couponCanceled: action.payload,
 				loading: false
 			};
 

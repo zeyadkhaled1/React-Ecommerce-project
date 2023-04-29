@@ -11,12 +11,12 @@ export const ProductText = () => {
 	return (
 		<div>
 			<Row className='mt-2'>
-				<div className='cat-text'>{item && item.category ? item.category.title : 'test'} </div>
+				<div className='cat-text'>{item && item.category ? item.category.title : ''} </div>
 			</Row>
 			<Row>
 				<Col md='8'>
 					<div className='cat-title d-inline'>
-						{item && item.name ? item.name : 'test'}
+						{item && item.name ? item.name : ''}
 						<div className='cat-rate d-inline mx-3'>{item && item.rating ? item.rating : 0}</div>
 					</div>
 				</Col>
@@ -25,7 +25,7 @@ export const ProductText = () => {
 				<Col md='8' className='mt-4'>
 					<div className='cat-text d-inline'>الماركة :</div>
 					<div className='barnd-text d-inline mx-1'>
-						{item && item.brand ? item.brand.name : 'test'}
+						{item && item.brand ? item.brand.name : ''}
 					</div>
 				</Col>
 			</Row>
@@ -36,7 +36,7 @@ export const ProductText = () => {
 			<Row className='mt-2'>
 				<Col md='10'>
 					<div className='product-description d-inline'>
-						{item && item.description ? item.description : 'test'}
+						{item && item.description ? item.description : ''}
 					</div>
 				</Col>
 			</Row>
