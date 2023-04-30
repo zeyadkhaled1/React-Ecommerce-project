@@ -1,19 +1,19 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import { AdminSideBar } from '../../Components/Admin/AdminSideBar';
 import { Pagination } from '../../Components/Utility/Pagination';
-import { AdminAllOrders } from '../../Components/Admin/AdminAllOrders';
+import { VendorSideBar } from './../../Components/Vendor/VendorSideBar';
+import { VendorAllOrders } from '../../Components/Vendor/VendorAllOrders';
 
-export const AdminAllOrdersPage = () => {
+export const VendorAllOrdersPage = () => {
 	return (
 		<div>
 			<Container className='py-3'>
 				<Row>
 					<Col sm='3' xs='2' md='2'>
-						<AdminSideBar />
+						<VendorSideBar />
 					</Col>
 					<Col sm='9' xs='10' md='10'>
-						<AdminAllOrders />
+						<VendorAllOrders />
 						<div style={{ marginBottom: '20px' }}></div>
 					</Col>
 				</Row>

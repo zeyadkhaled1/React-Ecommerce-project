@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getMainCategory, getSubCategory } from '../../Redux/Actions/categoryAction';
 import { getAllBrand } from './../../Redux/Actions/brandAction';
-import { GET_SUB_CATEGORY } from './../../Redux/Type';
+import { CREATE_PRODUCT, GET_SUB_CATEGORY } from './../../Redux/Type';
 import { createProduct } from './../../Redux/Actions/productAction';
 import notify from './../../hook/useNotification';
 
@@ -139,17 +139,25 @@ const AdminAddProductHook = () => {
 
 	useEffect(() => {
 		if (loading === false) {
-			setCatID(0);
-			setBrandID(0);
-			setSubCatID(0);
-			setImages([]);
-			setProdName('');
-			setProdDescription('');
-			setProdPrice('سعر المنتج');
-			setQty('الكمية المتاحة');
-			setTimeout(() => setLoading(true), 1500);
-			if (productRes.status === 201) notify('تم الاضافة بنجاح', 'success');
-			else notify('هناك مشكلة', 'error');
+			if (productRes) {
+				if (productRes.status === 201) {
+					notify('تم الاضافة بنجاح', 'success');
+					setTimeout(() => {
+						setCatID(0);
+						setBrandID(0);
+						setSubCatID(0);
+						setImages([]);
+						setProdName('');
+						setProdDescription('');
+						setProdPrice('سعر المنتج');
+						setQty('الكمية المتاحة');
+						dispatch({ type: CREATE_PRODUCT, payload: {}, loading: true });
+					}, 1500);
+				} else if (productRes.status >= 400) {
+					notify((productRes.data && productRes.data.message) || 'هناك مشكلة', 'error');
+					dispatch({ type: CREATE_PRODUCT, payload: {}, loading: true });
+				}
+			}
 		}
 	}, [loading]);
 

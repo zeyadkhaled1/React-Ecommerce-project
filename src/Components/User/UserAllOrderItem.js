@@ -3,11 +3,10 @@ import { Row, Col } from 'react-bootstrap';
 import { UserAllOrderCard } from './UserAllOrderCard';
 
 export const UserAllOrderItem = ({ order }) => {
-	console.log(order.items);
 	return (
 		<div className='user-order mt-2'>
 			<Row>
-				<div className='py-2 order-title'>طلب رقم #{order._id}</div>
+				<div className='py-2 order-title'>طلب رقم #{order.code}</div>
 			</Row>
 
 			{order && order.items.length > 0

@@ -1,16 +1,23 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProducts } from '../../Redux/Actions/productAction';
-import { getProductsPage } from './../../Redux/Actions/productAction';
 
 const ViewProductAdminHook = () => {
 	const dispatch = useDispatch();
+
+	const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
+
 	useEffect(() => {
-		dispatch(getProducts('?pageNumber=1&pageSize=12'));
+		if (user && user.accountType === 'admin') dispatch(getProducts('?pageNumber=1&pageSize=12'));
+		else if (user && user.accountType === 'vendor')
+			dispatch(getProducts(`?pageNumber=1&pageSize=12&owner=${user._id}`));
 	}, []);
 
-	const onPress = async page => {
-		await dispatch(getProductsPage(page, 12));
+	const onPress = page => {
+		if (user && user.accountType === 'admin')
+			dispatch(getProducts(`?pageNumber=${page}&pageSize=12`));
+		else if (user && user.accountType === 'vendor')
+			dispatch(getProducts(`?pageNumber=${page}&pageSize=12&owner=${user._id}`));
 	};
 
 	const allProductsRes = useSelector(state => state.allProduct.products);

@@ -6,7 +6,8 @@ import {
 	GET_MOST_RECENT_PRODUCT,
 	GET_PRODUCT,
 	GET_SIMILAR_PRODUCT,
-	DELETE_PRODUCT
+	DELETE_PRODUCT,
+	GET_ALL_PRODUCT_VENDOR
 } from '../Type';
 import { useGetData } from '../../Hooks/useGetData';
 import { useInsertDataWithImage } from './../../Hooks/useInsertData';
@@ -63,6 +64,23 @@ export const getProducts = query => async dispatch => {
 		dispatch({
 			type: GET_ERROR,
 			payload: 'ERROR' + e
+		});
+	}
+};
+
+export const getProductsVendor = query => async dispatch => {
+	try {
+		const response = await useGetData(`/api/item${query ? query : ''}`);
+		dispatch({
+			type: GET_ALL_PRODUCT_VENDOR,
+			payload: response,
+			loading: true
+		});
+	} catch (e) {
+		console.log(e);
+		dispatch({
+			type: GET_ALL_PRODUCT_VENDOR,
+			payload: e.response
 		});
 	}
 };

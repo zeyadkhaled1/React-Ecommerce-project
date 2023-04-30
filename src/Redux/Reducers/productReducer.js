@@ -7,13 +7,15 @@ import {
 	GET_ERROR,
 	GET_MOST_RECENT_PRODUCT,
 	GET_BEST_SELLER_PRODUCT,
-	DELETE_PRODUCT
+	DELETE_PRODUCT,
+	GET_ALL_PRODUCT_VENDOR
 } from '../Type';
 const initial = {
 	product: [],
 	updateProduct: [],
 	createProduct: [],
 	products: [],
+	vendorProducts: [],
 	similarProducts: [],
 	bestSeller: [],
 	mostRecent: [],
@@ -29,53 +31,69 @@ export const productReducer = (state = initial, action) => {
 				products: action.payload,
 				loading: false
 			};
+
+		case GET_ALL_PRODUCT_VENDOR:
+			return {
+				...state,
+				vendorProducts: action.payload,
+				loading: false
+			};
+
 		case GET_BEST_SELLER_PRODUCT:
 			return {
 				...state,
 				bestSeller: action.payload,
 				loading: false
 			};
+
 		case GET_MOST_RECENT_PRODUCT:
 			return {
 				...state,
 				mostRecent: action.payload,
 				loading: false
 			};
+
 		case GET_PRODUCT:
 			return {
 				...state,
 				product: action.payload,
 				loading: false
 			};
+
 		case GET_SIMILAR_PRODUCT:
 			return {
 				...state,
 				similarProducts: action.payload,
 				loading: false
 			};
+
 		case CREATE_PRODUCT:
 			return {
 				...state,
 				createProduct: action.payload,
 				loading: false
 			};
+
 		case UPDATE_PRODUCT:
 			return {
 				...state,
 				updateProduct: action.payload,
 				loading: false
 			};
+
 		case DELETE_PRODUCT:
 			return {
 				...state,
 				deleteProduct: action.payload,
 				loading: false
 			};
+
 		case GET_ERROR:
 			return {
 				products: action.payload,
 				loading: true
 			};
+
 		default:
 			return state;
 	}

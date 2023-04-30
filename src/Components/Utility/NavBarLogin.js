@@ -8,7 +8,7 @@ import GetAllUserCartHook from '../../hook/Cart/get-all-user-cart-hook';
 
 export const NavBarLogin = () => {
 	const [user, setUser] = useState('');
-	const [itemsNum]=GetAllUserCartHook();
+	const [itemsNum] = GetAllUserCartHook();
 
 	useEffect(() => {
 		if (localStorage.getItem('user')) setUser(JSON.parse(localStorage.getItem('user')));
@@ -19,7 +19,8 @@ export const NavBarLogin = () => {
 		localStorage.removeItem('user');
 		setUser('');
 	};
-	const [onChangeSearch,searchWord]= NavbarSearchHook()
+	const [onChangeSearch, searchWord] = NavbarSearchHook();
+
 	return (
 		<Navbar className='sticky-top' bg='dark' variant='dark' expand='sm'>
 			<Container>
@@ -31,8 +32,8 @@ export const NavBarLogin = () => {
 				<Navbar.Toggle aria-controls='basic-navbar-nav' />
 				<Navbar.Collapse id='basic-navbar-nav'>
 					<FormControl
-					value={searchWord||localStorage.getItem("searchWord")}
-					onChange={onChangeSearch}
+						value={searchWord || localStorage.getItem('searchWord')}
+						onChange={onChangeSearch}
 						type='search'
 						placeholder='ابحث...'
 						className='me-2 w-100 text-center'
@@ -52,7 +53,7 @@ export const NavBarLogin = () => {
 								) : null}
 								{user && user.accountType === 'vendor' ? (
 									<div>
-										<NavDropdown.Item href='/admin/addproduct'>اضافة منتج</NavDropdown.Item>
+										<NavDropdown.Item href='/vendor/all-products'>ادارة</NavDropdown.Item>
 									</div>
 								) : null}
 								<NavDropdown.Divider />
@@ -73,7 +74,7 @@ export const NavBarLogin = () => {
 							style={{ color: 'white' }}>
 							<img src={cart} className='login-img' alt='sfvs' />
 							<p style={{ color: 'white' }}>العربة</p>
-							<span class="position-absolute top-15 start-100 translate-middle badge rounded-pill bg-danger">
+							<span class='position-absolute top-15 start-100 translate-middle badge rounded-pill bg-danger'>
 								{itemsNum || 0}
 							</span>
 						</Nav.Link>

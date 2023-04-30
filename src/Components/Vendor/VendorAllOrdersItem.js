@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { UserAllOrderCard } from '../User/UserAllOrderCard';
 
-export const AdminAllOrdersItem = ({ order }) => {
+export const VendorAllOrdersItem = ({ order }) => {
 	return (
 		<div className='user-order px-3 mt-2 d-flex'>
 			<Col sm='12'>
-				<Link to={`/admin/order/${order._id}`} style={{ textDecoration: 'none' }}>
+				<Link to={`/vendor/order/${order._id}`} style={{ textDecoration: 'none' }}>
 					<div className='w-100'>
 						<Row className='justify-content-between'>
 							<Col sm='12' className=' d-flex flex-row justify-content-between'>

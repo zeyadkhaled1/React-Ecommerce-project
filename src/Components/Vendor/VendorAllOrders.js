@@ -1,33 +1,32 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Row } from 'react-bootstrap';
-import { UserAllOrderItem } from './UserAllOrderItem';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllOrders } from '../../Redux/Actions/orderAction';
+import { getAllOrdersVendor } from '../../Redux/Actions/orderAction';
 import { Pagination } from '../Utility/Pagination';
+import { VendorAllOrdersItem } from './VendorAllOrdersItem';
 
-export const UserAllOrders = () => {
+export const VendorAllOrders = () => {
 	const dispatch = useDispatch();
 	const user = localStorage.getItem('user') && JSON.parse(localStorage.getItem('user'));
 
-	const res = useSelector(state => state.orderReducer.orders);
+	const res = useSelector(state => state.orderReducer.ordersVendor);
 	const orders = res && res.data && res.data.orders;
 	const numberOfPages =
 		res && res.data && res.data.paginationResult && res.data.paginationResult.numberOfPages;
 
-	const getPage = page => dispatch(getAllOrders(page, 12));
+	const getPage = page => dispatch(getAllOrdersVendor(page, 12));
 
 	useEffect(() => {
-		dispatch(getAllOrders());
+		dispatch(getAllOrdersVendor());
 	}, []);
 
 	return (
 		<div>
-			<div className='admin-content-text pb-4'>اهلا {user.name}</div>
-			<Row className='justify-content-between'>
+			<div className='admin-content-text'>ادارة جميع الطلبات</div>
+			<Row>
 				{orders && orders.length > 0
-					? orders.map(order => <UserAllOrderItem order={order} />)
+					? orders.map((order, index) => <VendorAllOrdersItem order={order} key={index} />)
 					: null}
-
 				{numberOfPages > 1 && <Pagination onPress={getPage} pageCount={numberOfPages} />}
 			</Row>
 		</div>

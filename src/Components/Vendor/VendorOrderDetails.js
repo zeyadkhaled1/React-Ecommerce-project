@@ -1,48 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import { OrderItem } from '../order/OrderItem';
-import notify from '../../hook/useNotification';
-import { useDispatch, useSelector } from 'react-redux';
-import { editOrderStatus, getOrder } from '../../Redux/Actions/orderAction';
-import { UPDATE_ORDER } from '../../Redux/Type';
+import OrderDetailsHook from '../../hook/vendor/order-details-hook';
 
-export const AdminOrderDetails = ({ order }) => {
-	const dispatch = useDispatch();
-
-	const [orderStatus, setOrderStatus] = useState('');
-	const [loading, setLoading] = useState(false);
-
-	const handleOrderStatus = e => {
-		setOrderStatus(e.target.value);
-	};
-
-	useEffect(() => {
-		setOrderStatus(order && order.status);
-	}, [order]);
-
-	const handleChangeOrderStatus = async () => {
-		if (orderStatus === '' || orderStatus === order.status)
-			return notify('من فضلك اختر حالة الطلب', 'warn');
-		setLoading(true);
-		await dispatch(editOrderStatus(order._id, { status: orderStatus }));
-		setLoading(false);
-	};
-
-	const res = useSelector(state => state.orderReducer.orderUpdated);
-	useEffect(() => {
-		if (loading === false) {
-			if (res) {
-				if (res.status >= 200 && res.status < 300) {
-					notify('تم التعديل بنجاح', 'success');
-					dispatch({ type: UPDATE_ORDER, payload: {}, loading: true });
-					setTimeout(() => window.location.reload(), 1500);
-				} else if (res.status >= 400) {
-					notify((res.data && res.data.message) || 'هناك مشكلة', 'error');
-					dispatch({ type: UPDATE_ORDER, payload: {}, loading: true });
-				}
-			}
-		}
-	}, [loading]);
+export const VendorOrderDetails = ({ order }) => {
+	const [orderStatus, onChangeOrderStatus, handleChangeOrderStatus] = OrderDetailsHook(order);
 
 	return (
 		<div>
@@ -155,7 +117,7 @@ export const AdminOrderDetails = ({ order }) => {
 					<select
 						name='languages'
 						id='lang'
-						onChange={handleOrderStatus}
+						onChange={onChangeOrderStatus}
 						value={orderStatus}
 						className='select input-form-area mt-1  text-center px-2 w-50'>
 						<option value=''>حالة الطلب</option>

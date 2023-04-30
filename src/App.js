@@ -1,4 +1,9 @@
-import { UserRoutes, AdminRoutes, NotUserRoutes } from './hook/auth/protect-route-hook';
+import {
+	UserRoutes,
+	AdminRoutes,
+	NotUserRoutes,
+	VendorRoutes
+} from './hook/auth/protect-route-hook';
 import { HomePage } from './Page/Home/HomePage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Footer from './Components/Utility/Footer';
@@ -29,6 +34,13 @@ import { ForgetPasswordPage } from './Page/Auth/ForgetPasswordPage';
 import { ResetPasswordPage } from './Page/Auth/ResetPasswordPage';
 import { AdminAddCouponPage } from './Page/Admin/AdminAddCouponPage';
 import { AdminAllCouponPage } from './Page/Admin/AdminAllCouponPage';
+import { VendorAllProductsPage } from './Page/Vendor/VendorAllProductsPage';
+import { VendorAllCouponPage } from './Page/Vendor/VendorAllCouponPage';
+import { VendorAddCouponPage } from './Page/Vendor/VendorAddCouponPage';
+import { VendorAddProductPage } from './Page/Vendor/VendorAddProductPage';
+import { VendorEditProductPage } from './Page/Vendor/VendorEditProductPage';
+import { VendorAllOrdersPage } from './Page/Vendor/VendorAllOrdersPage';
+import { VendorOrderDetailsPage } from './Page/Vendor/VendorOrderDetailsPage';
 
 function App() {
 	return (
@@ -61,6 +73,16 @@ function App() {
 						<Route path='/admin/addsubcategory' element={<AdminAddSubCategoryPage />} />
 						<Route path='/admin/addproduct' element={<AdminAddProductPage />} />
 						<Route path='/admin/editproduct/:id' element={<AdminEditProductPage />} />
+					</Route>
+
+					<Route element={<VendorRoutes />}>
+						<Route path='/vendor/all-products' element={<VendorAllProductsPage />} />
+						<Route path='/vendor/all-coupon' element={<VendorAllCouponPage />} />
+						<Route path='/vendor/all-orders' element={<VendorAllOrdersPage />} />
+						<Route path='/vendor/order/:id' element={<VendorOrderDetailsPage />} />
+						<Route path='/vendor/add-coupon' element={<VendorAddCouponPage />} />
+						<Route path='/vendor/add-product' element={<VendorAddProductPage />} />
+						<Route path='/vendor/edit-product/:id' element={<VendorEditProductPage />} />
 					</Route>
 
 					<Route element={<UserRoutes />}>

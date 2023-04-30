@@ -4,7 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import { Row, Col } from 'react-bootstrap';
 import AddCouponHook from '../../hook/admin/add-coupon-hook';
 
-export const AdminAddCoupon = () => {
+export const VendorAddCoupon = () => {
 	const [
 		code,
 		discount,

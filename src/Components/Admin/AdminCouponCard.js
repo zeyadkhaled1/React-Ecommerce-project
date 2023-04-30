@@ -137,6 +137,7 @@ export const AdminCouponCard = ({ coupon }) => {
 							<img
 								alt=''
 								className='m-1'
+								style={{ cursor: 'pointer' }}
 								src={editIcon}
 								height='17px'
 								width='15px'
@@ -150,6 +151,7 @@ export const AdminCouponCard = ({ coupon }) => {
 							<img
 								alt=''
 								className='m-1'
+								style={{ cursor: 'pointer' }}
 								src={deleteIcon}
 								height='17px'
 								width='15px'
