@@ -12,7 +12,7 @@ const BrandFeatured = ({ title, btntitle }) => {
 			<SubTitle title={title} btntitle={btntitle} pathText='/allbrands' />
 			<Row className='my-1 d-flex justify-content-between'>
 				{loading === false ? (
-					brands.slice(0, 6).map((item, index) => <BrandCard key={index} img={item.img} />)
+					brands.slice(0, 6).map((item, index) => <BrandCard key={index} img={item.img} id={item._id}/>)
 				) : (
 					<Spinner animation='border' variant='primary' />
 				)}

@@ -29,6 +29,8 @@ import { ForgetPasswordPage } from './Page/Auth/ForgetPasswordPage';
 import { ResetPasswordPage } from './Page/Auth/ResetPasswordPage';
 import { AdminAddCouponPage } from './Page/Admin/AdminAddCouponPage';
 import { AdminAllCouponPage } from './Page/Admin/AdminAllCouponPage';
+import { ProductsByCategory } from './Page/Products/ProductsByCategory';
+import { ProductsByBrand } from './Page/Products/ProductsByBrand';
 
 function App() {
 	return (
@@ -42,7 +44,9 @@ function App() {
 					<Route path='/allproducts' element={<ShopProductsPage />} />
 					<Route path='/allproducts/:id' element={<ProductDetailsPage />} />
 					<Route path='/cart' element={<CartPage />} />
-
+					<Route path='/products/category/:id' element={<ProductsByCategory />} />
+					<Route path='/products/brand/:id' element={<ProductsByBrand />} />
+					
 					<Route element={<NotUserRoutes />}>
 						<Route path='/login' element={<LoginPage />} />
 						<Route path='/register' element={<RegisterPage />} />
