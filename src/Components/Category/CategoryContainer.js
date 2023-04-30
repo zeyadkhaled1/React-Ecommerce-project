@@ -14,6 +14,7 @@ export const CategoryContainer = ({ data, loading }) => {
 								key={index}
 								title={category.title}
 								img={category.img}
+								id={category._id}
 								background='#F4DBA4'
 							/>
 						))

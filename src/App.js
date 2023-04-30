@@ -41,6 +41,8 @@ import { VendorAddProductPage } from './Page/Vendor/VendorAddProductPage';
 import { VendorEditProductPage } from './Page/Vendor/VendorEditProductPage';
 import { VendorAllOrdersPage } from './Page/Vendor/VendorAllOrdersPage';
 import { VendorOrderDetailsPage } from './Page/Vendor/VendorOrderDetailsPage';
+import { ProductsByCategory } from './Page/Products/ProductsByCategory';
+import { ProductsByBrand } from './Page/Products/ProductsByBrand';
 
 function App() {
 	return (
@@ -54,7 +56,9 @@ function App() {
 					<Route path='/allproducts' element={<ShopProductsPage />} />
 					<Route path='/allproducts/:id' element={<ProductDetailsPage />} />
 					<Route path='/cart' element={<CartPage />} />
-
+					<Route path='/products/category/:id' element={<ProductsByCategory />} />
+					<Route path='/products/brand/:id' element={<ProductsByBrand />} />
+					
 					<Route element={<NotUserRoutes />}>
 						<Route path='/login' element={<LoginPage />} />
 						<Route path='/register' element={<RegisterPage />} />

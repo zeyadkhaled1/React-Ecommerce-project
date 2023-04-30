@@ -6,14 +6,16 @@ import { SideFilter } from '../../Components/Utility/SideFilter';
 import { CardProductsContainer } from '../../Components/Products/CardProductsContainer';
 import { Pagination } from '../../Components/Utility/Pagination';
 import ViewSearchProductsHook from '../../hook/product/view-search-products-hook';
-
+import { useSelector } from 'react-redux';
 export const ShopProductsPage = () => {
 	const [items, pagination, length, onPress,getProductSearched] = ViewSearchProductsHook();
 	const pageCount = pagination ? pagination.numberOfPages : 0;
+	const allCat=useSelector(state => state.allCategory.mainCategory)
+	let category = allCat.data ? allCat.data.categories : [];
 
 	return (
 		<div style={{ minHeight: '670px' }}>
-			<CategoryHeader />
+			<CategoryHeader categories={category} />
 			<Container>
 				<SearchCountResult onClick={getProductSearched} title={'نتيجة بحث ' + length} />
 				<Row className='d-flex flex-row'>

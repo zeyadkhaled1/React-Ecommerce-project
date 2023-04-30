@@ -9,7 +9,7 @@ export const BrandContainer = ({ data, loading }) => {
 			<Row className='my-2 d-flex justify-content-between'>
 				{loading === false ? (
 					data.length > 0 ? (
-						data.map((item, index) => <BrandCard key={index} img={item.img} />)
+						data.map((item, index) => <BrandCard key={index} img={item.img} id={item._id} />)
 					) : (
 						<h4>لا يوجد ماركات</h4>
 					)
