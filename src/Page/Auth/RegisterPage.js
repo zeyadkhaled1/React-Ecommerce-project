@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import RegisterHook from '../../hook/auth/register-hook';
 import { ToastContainer } from 'react-toastify';
 import moment from 'moment';
+import forwardlogin from '../../Images/forwardlogin.PNG';
 
 export const RegisterPage = () => {
 	const [
@@ -29,21 +30,23 @@ export const RegisterPage = () => {
 	return (
 		<Container style={{ minHeight: '680px' }}>
 			<Row className='py-5 d-flex justify-content-center hieght-search'>
-				<Col sm='12' className='d-flex flex-column '>
-					<label className='mx-auto title-login'>تسجيل حساب جديد</label>
+				<Col sm='6' className='d-flex flex-column order-sm-1' style={{width:'35%'}}>
+					<label className='mx-auto title-login my-3' style={{fontSize:'30px'}}>تسجيل حساب</label>
 					<input
 						value={name}
 						onChange={onChangeName}
 						placeholder='اسم المستخدم...'
 						type='text'
 						className='user-input text-center mx-auto mt-3'
+						style={{height:'40px' ,fontSize:'18px'}}
 					/>
 					<input
 						value={email}
 						onChange={onChangeEmail}
-						placeholder='الايميل...'
+						placeholder='الايميل...'	
 						type='email'
 						className='user-input text-center mx-auto mt-3'
+						style={{height:'40px' ,fontSize:'18px'}}
 					/>
 					<input
 						value={phone}
@@ -51,6 +54,7 @@ export const RegisterPage = () => {
 						placeholder='الهاتف...'
 						type='phone'
 						className='user-input text-center mx-auto mt-3'
+						style={{height:'40px' ,fontSize:'18px'}}
 					/>
 					<input
 						value={address}
@@ -58,6 +62,7 @@ export const RegisterPage = () => {
 						placeholder='العنوان...'
 						type='address'
 						className='user-input text-center mx-auto mt-3'
+						style={{height:'40px' ,fontSize:'18px'}}
 					/>
 					<input
 						value={password}
@@ -65,6 +70,7 @@ export const RegisterPage = () => {
 						placeholder='كلمه السر...'
 						type='password'
 						className='user-input text-center mx-auto mt-3'
+						style={{height:'40px' ,fontSize:'18px'}}
 					/>
 					<input
 						value={confirmPassword}
@@ -72,12 +78,14 @@ export const RegisterPage = () => {
 						placeholder='تاكيد كلمه السر...'
 						type='password'
 						className='user-input text-center mx-auto mt-3'
+						style={{height:'40px' ,fontSize:'18px'}}
 					/>
 					<input
 						type='date'
 						className='user-input text-center mx-auto mt-3'
 						value={moment(birthday).format('YYYY-MM-DD')}
 						onChange={onChangeBirthday}
+						style={{height:'40px'}}
 					/>
 					<div className='d-flex justify-content-center mt-3'>
 						<div class='form-check form-check-inline'>
@@ -107,19 +115,17 @@ export const RegisterPage = () => {
 							</label>
 						</div>
 					</div>
-					<button onClick={onSubmit} className='btn-login mx-auto mt-4'>
+					<button onClick={onSubmit} className='btn-login mx-auto mt-4'style={{height:'45px',fontSize:'22px'}} >
 						تسجيل الحساب
 					</button>
-					<label className='mx-auto my-4'>
-						لديك حساب بالفعل؟{' '}
-						<Link to='/login' style={{ textDecoration: 'none' }}>
-							<span style={{ cursor: 'pointer' }} className='text-danger'>
-								اضغط هنا
-							</span>
-						</Link>
-					</label>
 					{loading ? loading === true ? <Spinner animation='border' role='status' /> : null : null}
 				</Col>
+				<Col sm='6' className='d-flex flex-column order-sm-1'>
+ 				 <Link to='/login'>
+   					 <img src={forwardlogin} className='forwardlogin' alt='login' />
+  					</Link>
+				</Col>
+
 			</Row>
 			<ToastContainer />
 		</Container>
