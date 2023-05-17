@@ -22,7 +22,7 @@ export const NavBarLogin = () => {
 	const [onChangeSearch, searchWord] = NavbarSearchHook();
 
 	return (
-		<Navbar className='sticky-top' bg='dark' variant='dark' expand='sm'>
+		<Navbar className='sticky-top nav' bg='dark' variant='dark' expand='sm'>
 			<Container>
 				<Navbar.Brand>
 					<a href='/'>

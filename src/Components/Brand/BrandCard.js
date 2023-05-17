@@ -8,14 +8,14 @@ export const BrandCard = ({ img,id }) => {
 			<Card
 				className='my-1'
 				style={{
-					width: '100%',
+					width: '151px',
 					height: '151px',
 					borderRadius: '8px',
 					border: 'none',
 					backgroundColor: '#FFFFFF'
 				}}>
 					<Link to={`/products/brand/${id}`}>
-				<Card.Img style={{ width: '100%', height: '151px' }} src={img} />
+				<Card.Img style={{ width: '151px', height: '151px' }} src={img} />
 				</Link>
 			</Card>
 		</Col>

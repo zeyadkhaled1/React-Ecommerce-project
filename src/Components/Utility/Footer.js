@@ -6,7 +6,7 @@ import twitter from "../../Images/twitter.png";
 import phone from "../../Images/phone.png";
 const Footer = () => {
     return (
-        <div className="footer-background footer mt-3 pt-2" style={{ maxHeight: "50px" }}>
+        <div className="footer-background footer mt-3 pt-2" style={{ maxHeight: "50px" }} >
             <Container className="">
                 <Row className="d-flex justify-content-between align-items-center">
                     <Col sm="6" className="d-flex align-items-center ">
@@ -16,10 +16,10 @@ const Footer = () => {
                     </Col>
                     <Col
                         sm="6"
-                        className="d-flex justify-content-end align-items-center ">
-                        <div className="d-flex pt-3 mx-2">
+                        className="d-flex justify-content-end align-items-center  mb-0 ">
+                        <div className="d-flex pt-3 mx-2  mb-0">
                             <img width="20px" height="20px" src={phone} alt="" />
-                            <p className="footer-phone">0122455346356</p>
+                            <p className="footer-phone pb-1 mb-0">0122455346356</p>
                         </div>
                         <div style={{ cursor: "pointer" }}>
                             <img width="20px" height="20px" src={facebook} alt="" />

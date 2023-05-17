@@ -9,11 +9,11 @@ const ProductCard = ({ item, favProd }) => {
 	const [favImg, handleFav] = ProductCardHook(item, favProd);
 
 	return (
-		<Col xs='6' sm='6' md='4' lg='3' className='d-flex'>
+		<Col  className='d-flex'>
 			<Card
 				className='my-2'
 				style={{
-					width: '100%',
+					width: '250px',
 					height: '345px',
 					borderRadius: '8px',
 					border: 'none',
