@@ -9,7 +9,8 @@ import ViewProductDetailsHook from '../../hook/product/view-product-details-hook
 export const ProductGallery = () => {
 	const { id } = useParams();
 	const [item, images] = ViewProductDetailsHook(id);
-
+	
+	
 	return (
 		<div className='product-gallary-card d-flex justfiy-content-center  align-items-center pt-2'>
 			<ImageGallery
@@ -17,10 +18,12 @@ export const ProductGallery = () => {
 				showFullscreenButton={false}
 				isRTL={true}
 				showPlayButton={false}
-				showThumbnails={false}
+				showThumbnails={true}
 				renderRightNav={RightButton}
 				renderLeftNav={LeftButton}
 			/>
 		</div>
+
+
 	);
 };

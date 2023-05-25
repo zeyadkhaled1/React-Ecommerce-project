@@ -4,7 +4,12 @@ body {
 }
 :root {
   --gradient: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
+  --gradient2: linear-gradient(-112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
   
+}
+.top-nav{
+  width: 25px;
+  height: 25px;
 }
 
 .m-0 {
@@ -22,9 +27,12 @@ body {
 
 .scroll{
  
-  background:  linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%)!important;
+  background:  var(--gradient)!important;
 
   color: white!important ;
+}
+.scroll:hover{
+  background: var(--gradient2) !important;
 }
 /*swiper category*/
 .swiper-slide{
@@ -144,8 +152,9 @@ margin-bottom: 30px;
 
 /* products card style */
 .card:hover {
-  transform: scaleY(1.1);
-  transform: scaleX(1.01);
+  transform: scaleY(1.2);
+  transform: scaleX(1.05);
+  opacity: 0.9;
 }
 .card-title {
   color: #555550;
@@ -187,18 +196,18 @@ margin-bottom: 30px;
   padding: 5px;
   height: 35px;
   width: 90px;
-  color: #272727;
+  color: white;
   text-decoration: none;
   text-align: center;
   border: 1px solid #272727;
   border-radius: 14px;
+  background: var(--gradient);
 }
 
 .shopping-now:hover {
   
-  background: var(--gradient)!important;
+  background: var(--gradient2)!important;
   border: 1px solid #272727;
-  color: #f9f9f9;
   border-radius: 14px;
   cursor: pointer;
 }
@@ -223,6 +232,7 @@ margin-bottom: 30px;
   max-height: 130px;
   max-width: 80%;
 }
+/* icons in home pagw*/
 .sprite-home{
   
     max-height: 30vh;
@@ -233,6 +243,8 @@ margin-bottom: 30px;
 /* end discount */
 .nav {
   background: var(--gradient)!important;
+  border-radius:0 0 15px 15px ;
+  flex-flow: column;
  
 }
 /* foter */
@@ -278,6 +290,7 @@ margin-bottom: 30px;
   text-align: right;
 }
 
+
 .card-filter {
   background-color: #ffffff;
   border-radius: 10px;
@@ -300,8 +313,9 @@ margin-bottom: 30px;
 /* end card filter */
 
 /* products details page */
+
 .product-gallary-card {
-  height: 470px !important;
+  height: 80vh !important;
   width: 370px;
   border-radius: 29px;
   background-color: #ffffff;
@@ -381,15 +395,15 @@ margin-bottom: 30px;
   height: 45px;
   border-radius: 9px;
   border: none;
-  background-color: #272727;
   color: #ffffff;
   font-family: "Almarai";
   font-size: 14px;
   font-weight: normal;
+  background: var(--gradient);
 }
 
 .product-cart-add:hover {
-  color: #bdbaba !important;
+  background: var(--gradient2) !important;
 }
 
 /* products gallary slide style */

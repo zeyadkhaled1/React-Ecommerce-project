@@ -2,7 +2,11 @@ import React, { useEffect, useState } from 'react';
 import logo from '../../Images/logo.png';
 import cart from '../../Images/cart.png';
 import login from '../../Images/login.png';
-import { Navbar, Container, Nav, FormControl, NavDropdown } from 'react-bootstrap';
+import t1 from '../../Images/t1.png';
+import t2 from '../../Images/t2.png';
+import t3 from '../../Images/t3.png';
+
+import {Col,Row, Navbar, Container, Nav, FormControl, NavDropdown } from 'react-bootstrap';
 import { NavbarSearchHook } from '../../hook/search/navbar-search-hook';
 import GetAllUserCartHook from '../../hook/Cart/get-all-user-cart-hook';
 
@@ -22,8 +26,37 @@ export const NavBarLogin = () => {
 	const [onChangeSearch, searchWord] = NavbarSearchHook();
 
 	return (
-		<Navbar className='sticky-top nav' bg='dark' variant='dark' expand='sm'>
+	
+	
+		<Navbar className='sticky-top nav ' bg='dark' variant='dark' expand='sm'>
+			<Container style={{ borderBottom:"1px solid grey" }} class=" d-flex  align-items-center justify-content-between p-1">
+						<Col><p  style={{ color: '#D2DE26',fontStyle:'italic' }}>أسهل وأسرع منصة تسوق .</p> </Col>
+						<div class="d-flex flex-direction-row  gap-5">
+								
+								<a  style={{ textDecoration:"none"}}href="/allcategory" class="d-flex ">
+									<img src={t3} className='top-nav' alt='sfvs' />
+												<p style={{ color: 'white' }}className='align-self-center'>التصنيفات</p>
+									</a>
+								
+							
+								<a style={{ textDecoration:"none"}} href="#" class="d-flex ">
+									<img src={t1} className='top-nav' alt='sfvs' />
+												<p style={{ color: 'white' }}className='align-self-center'>معلومات عنا </p>
+									</a>
+
+								<a style={{ textDecoration:"none"}} href="#" class="d-flex ">
+										<img src={t2} className='top-nav' alt='sfvs' />
+													<p style={{ color: 'white' }}className='align-self-center'>اتصل ب19950</p>
+										</a>
+							
+
+								
+								
+						
+						</div>
+			</Container>
 			<Container>
+
 				<Navbar.Brand>
 					<a href='/'>
 						<img src={logo} className='logo' />
@@ -82,5 +115,6 @@ export const NavBarLogin = () => {
 				</Navbar.Collapse>
 			</Container>
 		</Navbar>
+		
 	);
 };
