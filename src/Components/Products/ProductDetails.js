@@ -7,10 +7,10 @@ export const ProductDetails = () => {
 	return (
 		<div>
 			<Row className='py-3'>
-				<Col lg='4'>
+				<Col sm='6'>
 					<ProductGallery />
 				</Col>
-				<Col lg='8'>
+				<Col sm='6'>
 					<ProductText />
 				</Col>
 			</Row>
