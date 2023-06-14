@@ -27,8 +27,8 @@ export const createProduct = formData => async dispatch => {
 	} catch (e) {
 		console.log(e);
 		dispatch({
-			type: GET_ERROR,
-			payload: 'ERROR' + e
+			type: CREATE_PRODUCT,
+			payload: e.response
 		});
 	}
 };
@@ -45,8 +45,8 @@ export const editProduct = (id, formData) => async dispatch => {
 	} catch (e) {
 		console.log(e);
 		dispatch({
-			type: GET_ERROR,
-			payload: 'ERROR' + e
+			type: UPDATE_PRODUCT,
+			payload: e.response
 		});
 	}
 };
@@ -62,8 +62,8 @@ export const getProducts = query => async dispatch => {
 	} catch (e) {
 		console.log(e);
 		dispatch({
-			type: GET_ERROR,
-			payload: 'ERROR' + e
+			type: GET_ALL_PRODUCT,
+			payload: e.response
 		});
 	}
 };
@@ -96,8 +96,8 @@ export const getProductsPage = (page, limit) => async dispatch => {
 	} catch (e) {
 		console.log(e);
 		dispatch({
-			type: GET_ERROR,
-			payload: 'ERROR' + e
+			type: GET_ALL_PRODUCT,
+			payload: e.response
 		});
 	}
 };
@@ -113,8 +113,8 @@ export const getSimilarProducts = id => async dispatch => {
 	} catch (e) {
 		console.log(e);
 		dispatch({
-			type: GET_ERROR,
-			payload: 'ERROR' + e
+			type: GET_SIMILAR_PRODUCT,
+			payload: e.response
 		});
 	}
 };
@@ -130,15 +130,15 @@ export const getProduct = id => async dispatch => {
 	} catch (e) {
 		console.log(e);
 		dispatch({
-			type: GET_ERROR,
-			payload: 'ERROR' + e
+			type: GET_PRODUCT,
+			payload: e.response
 		});
 	}
 };
 
 export const getBestSellerProducts = limit => async dispatch => {
 	try {
-		const response = await useGetData(`/api/item?limit=${limit ? limit : 4}&sort=-sold`);
+		const response = await useGetData(`/api/item?pageSize=${limit ? limit : 4}&sort=-sold`);
 		dispatch({
 			type: GET_BEST_SELLER_PRODUCT,
 			payload: response,
@@ -147,15 +147,15 @@ export const getBestSellerProducts = limit => async dispatch => {
 	} catch (e) {
 		console.log(e);
 		dispatch({
-			type: GET_ERROR,
-			payload: 'ERROR' + e
+			type: GET_BEST_SELLER_PRODUCT,
+			payload: e.response
 		});
 	}
 };
 
 export const getMostRecentProducts = limit => async dispatch => {
 	try {
-		const response = await useGetData(`/api/item?limit=${limit ? limit : 4}&sort=-_id`);
+		const response = await useGetData(`/api/item?pageSize=${limit ? limit : 4}&sort=-_id`);
 		dispatch({
 			type: GET_MOST_RECENT_PRODUCT,
 			payload: response,
@@ -164,8 +164,8 @@ export const getMostRecentProducts = limit => async dispatch => {
 	} catch (e) {
 		console.log(e);
 		dispatch({
-			type: GET_ERROR,
-			payload: 'ERROR' + e
+			type: GET_MOST_RECENT_PRODUCT,
+			payload: e.response
 		});
 	}
 };
@@ -181,8 +181,8 @@ export const deleteProduct = id => async dispatch => {
 	} catch (e) {
 		console.log(e);
 		dispatch({
-			type: GET_ERROR,
-			payload: 'ERROR' + e
+			type: DELETE_PRODUCT,
+			payload: e.response
 		});
 	}
 };

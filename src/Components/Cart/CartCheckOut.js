@@ -49,12 +49,10 @@ export const CartCheckout = ({ totalCartPrice }) => {
 	useEffect(() => {
 		if (cancelLoading === false) {
 			if (couponCanceledRes && couponCanceledRes.status >= 200 && couponCanceledRes.status < 300) {
-				console.log(couponCanceledRes);
 				notify('تمت الغاء الكود بنجاح', 'success');
 				dispatch({ type: CANCEL_COUPON, payload: {} });
 				setTimeout(() => window.location.reload(true), 1000);
 			} else if (couponCanceledRes && couponCanceledRes.status >= 400) {
-				console.log(couponCanceledRes);
 				notify(couponCanceledRes.data.message || 'حدث خطأ ما', 'error');
 				dispatch({ type: CANCEL_COUPON, payload: {} });
 			}

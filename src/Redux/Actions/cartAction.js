@@ -2,8 +2,8 @@ import {
 	ADD_TO_CART, GET_ALL_USER_CART,DELETE_ITEM_FROM_CART,UPDATE_ITEM_IN_CART
 } from '../Type';
 import { useGetData } from '../../Hooks/useGetData';
-import { useInsertData, useInsertDataWithImage } from '../../Hooks/useInsertData';
-import { useUpdateData, useUpdateDataWithImage } from './../../Hooks/useUpdateData';
+import { useInsertData } from '../../Hooks/useInsertData';
+import { useUpdateData } from './../../Hooks/useUpdateData';
 import { useDeleteData } from './../../Hooks/useDeleteData';
 
 export const addToCart = (body,id) => async dispatch => {

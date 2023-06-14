@@ -82,12 +82,10 @@ function EditCouponHook(coupon) {
 	useEffect(() => {
 		if (deleteLoading === false) {
 			if (resDelete && resDelete.status === 200) {
-				console.log(resDelete);
 				notify('تم الحذف', 'success');
 				setShowDelete(false);
 				setTimeout(() => window.location.reload(), 1000);
 			} else if (resDelete && resDelete.status >= 400) {
-				console.log(resDelete);
 				notify(
 					resDelete.data && resDelete.data.message ? resDelete.data.message : 'حدثت مشكلة ما',
 					'error'

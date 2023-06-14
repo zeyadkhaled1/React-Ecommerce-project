@@ -3,6 +3,9 @@ import { Container, Row, Col, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import LoginHook from './../../hook/auth/login-hook';
 import { ToastContainer } from 'react-toastify';
+import facebookIcon from './../../Images/facebook2.png';
+import googleIcon from './../../Images/google.png';
+import { baseUrl } from './../../Api/BaseUrl';
 
 export const LoginPage = () => {
 	const [email, password, loading, onChangeEmail, onChangePassword, onSubmit] = LoginHook();
@@ -36,7 +39,29 @@ export const LoginPage = () => {
 								اضغط هنا
 							</span>
 						</Link>
+						{' او سجل عن طريق'}
+						<a href={`${baseUrl.defaults.baseURL}/auth/facebook`}>
+							<img
+								src={facebookIcon}
+								className='ms-2'
+								alt='Login with facebook'
+								height='20px'
+								width='20px'
+								style={{ cursor: 'pointer' }}
+							/>
+						</a>
+						<a href={`${baseUrl.defaults.baseURL}/auth/google`}>
+							<img
+								src={googleIcon}
+								className='ms-2'
+								alt='Login with google'
+								height='20px'
+								width='20px'
+								style={{ cursor: 'pointer' }}
+							/>
+						</a>
 					</label>
+
 					<label className='mx-auto my-4'>
 						<Link to='/user/forget-password' style={{ textDecoration: 'none', color: 'red' }}>
 							نسيت كلمة السر؟

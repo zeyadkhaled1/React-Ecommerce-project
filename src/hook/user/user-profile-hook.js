@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { changePassword, getUserProfile, refreshToken } from '../../Redux/Actions/authAction';
 import notify from '../useNotification';
+import { vendorReq } from './../../Redux/Actions/authAction';
 
 function UserProfileHook() {
 	const dispatch = useDispatch();
@@ -15,9 +16,16 @@ function UserProfileHook() {
 	const [oldPassword, setOldPassword] = useState('');
 	const [newPassword, setNewPassword] = useState('');
 	const [loading, setLoading] = useState(false);
+	const [showVendorEdit, setShowVendorEdit] = useState(false);
+	const [vendorLoading, setVendorLoading] = useState(false);
+	const [companyName, setCompanyName] = useState('');
+	const [companyWebsite, setCompanyWebsite] = useState('');
+	const [companyAddress, setCompanyAddress] = useState('');
+	const [additionalInfo, setAdditionalInfo] = useState('');
 
 	const userRes = useSelector(state => state.auth.user);
 	const tokenRes = useSelector(state => state.auth.token);
+	const vendorReqRes = useSelector(state => state.auth.vendorRequest);
 	const changePasswordRes = useSelector(state => state.auth.changePassword);
 
 	const onChangeOldPassword = event => {
@@ -30,12 +38,54 @@ function UserProfileHook() {
 		setNewPassword(event.target.value);
 	};
 
+	const onChangeCompanyName = event => {
+		event.persist();
+		setCompanyName(event.target.value);
+	};
+
+	const onChangeCompanyWebsite = event => {
+		event.persist();
+		setCompanyWebsite(event.target.value);
+	};
+
+	const onChangeCompanyAddress = event => {
+		event.persist();
+		setCompanyAddress(event.target.value);
+	};
+
+	const onChangeAdditionalInfo = event => {
+		event.persist();
+		setAdditionalInfo(event.target.value);
+	};
+
 	const handleChangePassword = async e => {
 		e.preventDefault();
 		if (oldPassword === '' || newPassword === '') return notify('من فضلك اكمل البيانات', 'warn');
 		setLoading(true);
 		await dispatch(changePassword({ oldPassword, newPassword }));
 		setLoading(false);
+	};
+
+	const handleShowVendorEdit = () => setShowVendorEdit(true);
+
+	const handleCloseVendorEdit = () => {
+		setCompanyName('');
+		setCompanyAddress('');
+		setCompanyWebsite('');
+		setAdditionalInfo('');
+		setShowVendorEdit(false);
+	};
+
+	const handleVendorRequest = async e => {
+		let body = {};
+		if (companyAddress === '' || companyName === '' || companyWebsite === '')
+			return notify('من فضلك اكمل البيانات', 'warn');
+		body = {
+			details: `${companyName}\n ${companyAddress}\n ${companyWebsite}\n ${additionalInfo}`
+		};
+		setVendorLoading(true);
+		await dispatch(vendorReq(body));
+		setVendorLoading(false);
 	};
 
 	useEffect(() => {
@@ -45,6 +95,23 @@ function UserProfileHook() {
 			navigate('/user/profile');
 		}
 	}, []);
+
+	useEffect(() => {
+		if (vendorReqRes && vendorReqRes.data) {
+			if (vendorReqRes.status === 200) {
+				notify('تم تقديم الطلب بنجاح', 'success');
+				setTimeout(() => window.location.reload(), 1000);
+			} else {
+				notify(
+					vendorReqRes.data && vendorReqRes.data.message
+						? vendorReqRes.data.message
+						: 'حدثت مشكلة ما',
+					'error'
+				);
+				handleCloseVendorEdit();
+			}
+		}
+	}, [vendorLoading]);
 
 	useEffect(() => {
 		if (tokenRes && tokenRes.headers) {
@@ -87,9 +154,21 @@ function UserProfileHook() {
 		user,
 		oldPassword,
 		newPassword,
+		companyName,
+		companyAddress,
+		companyWebsite,
+		showVendorEdit,
+		additionalInfo,
 		onChangeOldPassword,
+		handleCloseVendorEdit,
+		handleShowVendorEdit,
 		onChangeNewPassword,
-		handleChangePassword
+		handleVendorRequest,
+		handleChangePassword,
+		onChangeCompanyName,
+		onChangeCompanyWebsite,
+		onChangeAdditionalInfo,
+		onChangeCompanyAddress
 	];
 }
 

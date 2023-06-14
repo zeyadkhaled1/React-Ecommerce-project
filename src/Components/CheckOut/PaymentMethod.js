@@ -35,7 +35,6 @@ export const PaymentMethod = () => {
 	};
 
 	const handleCheckout = async () => {
-		console.log(paymentMethod, address, phone);
 		if (address === '' || phone === '' || paymentMethod === '')
 			return notify('من فضلك اكمل البيانات', 'warn');
 		const body = {

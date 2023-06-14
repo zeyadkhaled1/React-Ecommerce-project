@@ -1,13 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import moment from 'moment';
 import { Row, Col, Modal, Button } from 'react-bootstrap';
 import UserProfileHook from '../../hook/user/user-profile-hook';
 import { ToastContainer } from 'react-toastify';
 import editIcon from '../../Images/edit.png';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { editUser } from '../../Redux/Actions/authAction';
-import notify from '../../hook/useNotification';
 import EditUserProfileHook from '../../hook/user/edit-user-profile-hook';
 
 export const UserProfile = () => {
@@ -15,9 +11,21 @@ export const UserProfile = () => {
 		user,
 		oldPassword,
 		newPassword,
+		companyName,
+		companyAddress,
+		companyWebsite,
+		showVendorEdit,
+		additionalInfo,
 		onChangeOldPassword,
+		handleCloseVendorEdit,
+		handleShowVendorEdit,
 		onChangeNewPassword,
-		handleChangePassword
+		handleVendorRequest,
+		handleChangePassword,
+		onChangeCompanyName,
+		onChangeCompanyWebsite,
+		onChangeAdditionalInfo,
+		onChangeCompanyAddress
 	] = UserProfileHook();
 
 	const [
@@ -44,7 +52,7 @@ export const UserProfile = () => {
 			<Modal show={showEdit} onHide={handleCloseEdit}>
 				<Modal.Header>
 					<Modal.Title>
-						<div className='font'>تعديل</div>
+						<div className='font'>تعديل البيانات الشخصية</div>
 					</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>
@@ -124,14 +132,75 @@ export const UserProfile = () => {
 					</div>
 				</Modal.Body>
 				<Modal.Footer>
-					<Button className='font' variant='success' onClick={handleCloseEdit}>
+					<Button className='font' variant='dark' onClick={handleCloseEdit}>
 						تراجع
 					</Button>
-					<Button className='font' variant='dark' onClick={handleEdit}>
+					<Button className='font' variant='success' onClick={handleEdit}>
 						تعديل
 					</Button>
 				</Modal.Footer>
 			</Modal>
+
+			<Modal show={showVendorEdit} onHide={handleCloseVendorEdit}>
+				<Modal.Header>
+					<Modal.Title>
+						<div className='font'>طلب توريد</div>
+					</Modal.Title>
+				</Modal.Header>
+				<Modal.Body>
+					<div className='form-floating mb-2'>
+						<input
+							onChange={onChangeCompanyName}
+							value={companyName}
+							type='text'
+							className='form-control'
+							id='floatingName'
+						/>
+						<label for='floatingName'>اسم الشركة</label>
+					</div>
+					<div className='form-floating mb-2'>
+						<input
+							onChange={onChangeCompanyWebsite}
+							value={companyWebsite}
+							type='text'
+							className='form-control'
+							id='floatingEmail'
+						/>
+						<label for='floatingEmail'>الموقع الالكتروني للشركة</label>
+					</div>
+
+					<div className='form-floating mb-2'>
+						<input
+							onChange={onChangeCompanyAddress}
+							value={companyAddress}
+							type='text'
+							className='form-control'
+							id='floatingAddress'
+						/>
+						<label for='floatingAddress'>عنوان الشركة</label>
+					</div>
+
+					<div className='form-floating mb-2'>
+						<input
+							onChange={onChangeAdditionalInfo}
+							value={additionalInfo}
+							type='text'
+							className='form-control'
+							id='floatingInfo'
+						/>
+						<label for='floatingInfo'>معلومات اضافية</label>
+					</div>
+				</Modal.Body>
+				<Modal.Footer>
+					<Button className='font' variant='dark' onClick={handleCloseVendorEdit}>
+						تراجع
+					</Button>
+					<Button className='font' variant='success' onClick={handleVendorRequest}>
+						تقديم الطلب
+					</Button>
+				</Modal.Footer>
+			</Modal>
+
 			<div>
 				<div className='user-profile-card my-3 px-2'>
 					<Row className='d-flex justify-content-between pt-2'>
@@ -172,7 +241,7 @@ export const UserProfile = () => {
 								<div className='p-1 item-delete-edit'>{user ? user.email : ''}</div>
 							</Col>
 							<Col xs='6' className='d-flex'>
-								<div className='p-1 item-delete-edit'>
+								<div style={{ cursor: 'default' }} className='p-1 item-delete-edit'>
 									{user ? (user.isVerified ? 'Verified' : 'Not Verified') : ''}
 								</div>
 							</Col>
@@ -188,9 +257,14 @@ export const UserProfile = () => {
 					) : null}
 					{user.accountType ? (
 						<Row className=''>
-							<Col xs='12' className='d-flex'>
+							<Col xs='6' className='d-flex'>
 								<div className='p-1'>نوع الحساب:</div>
 								<div className='p-1 item-delete-edit'>{user ? user.accountType : ''}</div>
+							</Col>
+							<Col xs='6' className='d-flex'>
+								<div className='p-1 item-delete-edit' onClick={handleShowVendorEdit}>
+									{user && user.accountType === 'client' ? 'Apply a Vendor Request' : ''}
+								</div>
 							</Col>
 						</Row>
 					) : null}

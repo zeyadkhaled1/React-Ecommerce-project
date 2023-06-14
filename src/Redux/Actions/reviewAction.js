@@ -1,7 +1,7 @@
 import { CREATE_REVIEW, DELETE_REVIEW, GET_ALL_REVIEW, GET_ERROR, UPDATE_REVIEW } from '../Type';
 import { useGetData } from '../../Hooks/useGetData';
-import { useInsertData, useInsertDataWithImage } from '../../Hooks/useInsertData';
-import { useUpdateData, useUpdateDataWithImage } from './../../Hooks/useUpdateData';
+import { useInsertData } from '../../Hooks/useInsertData';
+import { useUpdateData } from './../../Hooks/useUpdateData';
 import { useDeleteData } from './../../Hooks/useDeleteData';
 
 export const getAllReview =

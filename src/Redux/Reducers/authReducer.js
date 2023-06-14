@@ -1,4 +1,6 @@
 import {
+	ACCEPT_VENDOR_REQUEST,
+	CANCEL_VENDOR_REQUEST,
 	CHANGE_PASSWORD,
 	CREATE_NEW_USER,
 	DELETE_USER,
@@ -6,10 +8,12 @@ import {
 	GET_ALL_USER,
 	GET_ERROR,
 	GET_USER,
+	GET_VENDOR_REQUEST,
 	LOGIN_USER,
 	REFRESH_TOKEN,
 	RESET_PASSWORD,
-	UPDATE_USER
+	UPDATE_USER,
+	VENDOR_REQUEST
 } from '../Type';
 const initial = {
 	users: [],
@@ -22,6 +26,10 @@ const initial = {
 	forgetPassword: [],
 	resetPassword: [],
 	changePassword: [],
+	vendorRequest: [],
+	cancelVendorRequest: [],
+	acceptVendorRequest: [],
+	vendorRequests: [],
 	loading: true
 };
 
@@ -76,6 +84,26 @@ export const authReducer = (state = initial, action) => {
 		case REFRESH_TOKEN:
 			return {
 				token: action.payload,
+				loading: false
+			};
+		case VENDOR_REQUEST:
+			return {
+				vendorRequest: action.payload,
+				loading: false
+			};
+		case GET_VENDOR_REQUEST:
+			return {
+				vendorRequests: action.payload,
+				loading: false
+			};
+		case CANCEL_VENDOR_REQUEST:
+			return {
+				cancelVendorRequest: action.payload,
+				loading: false
+			};
+		case ACCEPT_VENDOR_REQUEST:
+			return {
+				acceptVendorRequest: action.payload,
 				loading: false
 			};
 		case GET_ERROR:

@@ -44,7 +44,7 @@ export const getCategory = id => async dispatch => {
 export const getMainCategory = () => {
 	return async dispatch => {
 		try {
-			const response = await useGetData('/api/category?main=true');
+			const response = await useGetData('/api/category?isParent=true');
 			dispatch({
 				type: GET_MAIN_CATEGORY,
 				payload: response

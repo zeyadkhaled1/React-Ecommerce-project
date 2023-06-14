@@ -12,7 +12,6 @@ export const AdminOrderDetailsPage = () => {
 
 	const res = useSelector(state => state.orderReducer.order);
 	const order = res && res.data && res.data.order;
-	console.log(order);
 
 	useEffect(() => {
 		dispatch(getOrder(id));

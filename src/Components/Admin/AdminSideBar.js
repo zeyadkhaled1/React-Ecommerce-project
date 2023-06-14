@@ -23,6 +23,12 @@ export const AdminSideBar = () => {
 					</div>
 				</Link>
 
+				<Link to='/admin/all-vendor-request' style={{ textDecoration: 'none' }}>
+					<div className='admin-side-text my-1 border-bottom p-2 mx-auto text-center'>
+						طلبات المورد
+					</div>
+				</Link>
+
 				<Link to='/admin/addbrand' style={{ textDecoration: 'none' }}>
 					<div className='admin-side-text my-1 border-bottom p-2 mx-auto text-center'>
 						اضف ماركه
@@ -40,7 +46,9 @@ export const AdminSideBar = () => {
 				</Link>
 
 				<Link to='/admin/add-coupon' style={{ textDecoration: 'none' }}>
-					<div className='admin-side-text my-1 border-bottom p-2 mx-auto text-center'>اضف كوبون</div>
+					<div className='admin-side-text my-1 border-bottom p-2 mx-auto text-center'>
+						اضف كوبون
+					</div>
 				</Link>
 			</div>
 		</div>
