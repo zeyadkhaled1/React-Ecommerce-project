@@ -34,6 +34,7 @@ body {
 .scroll:hover{
   background: var(--gradient2) !important;
 }
+
 /*swiper category*/
 .swiper-slide{
   display: flex;
@@ -44,6 +45,7 @@ body {
 .swiper-container{
 width: 100%;
 margin-bottom: 30px;
+
 
 }
 
@@ -482,11 +484,11 @@ margin-bottom: 30px;
   border-radius: 9px;
   border: none;
   color: white;
-  background-color: #272727;
+  background: var(--gradient);
 }
 
 .btn-login:hover {
-  color: rgb(206, 204, 204);
+  background: var(--gradient2);
 }
 
 /* end login and register */
