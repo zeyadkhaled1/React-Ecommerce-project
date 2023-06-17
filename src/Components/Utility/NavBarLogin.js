@@ -6,7 +6,7 @@ import t1 from '../../Images/t1.png';
 import t2 from '../../Images/t2.png';
 import t3 from '../../Images/t3.png';
 
-import {Col,Row, Navbar, Container, Nav, FormControl, NavDropdown } from 'react-bootstrap';
+import {Col, Navbar, Container, Nav, FormControl, NavDropdown } from 'react-bootstrap';
 import { NavbarSearchHook } from '../../hook/search/navbar-search-hook';
 import GetAllUserCartHook from '../../hook/Cart/get-all-user-cart-hook';
 
@@ -39,12 +39,12 @@ export const NavBarLogin = () => {
 									</a>
 								
 							
-								<a style={{ textDecoration:"none"}} href="#" class="d-flex ">
+								<a style={{ textDecoration:"none"}} href="#info" class="d-flex ">
 									<img src={t1} className='top-nav' alt='sfvs' />
 												<p style={{ color: 'white' }}className='align-self-center'>معلومات عنا </p>
 									</a>
 
-								<a style={{ textDecoration:"none"}} href="#" class="d-flex ">
+								<a style={{ textDecoration:"none"}}  class="d-flex ">
 										<img src={t2} className='top-nav' alt='sfvs' />
 													<p style={{ color: 'white' }}className='align-self-center'>اتصل ب19950</p>
 										</a>
@@ -59,7 +59,7 @@ export const NavBarLogin = () => {
 
 				<Navbar.Brand>
 					<a href='/'>
-						<img src={logo} className='logo' />
+						<img src={logo} className='logo' alt=''/>
 					</a>
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls='basic-navbar-nav' />

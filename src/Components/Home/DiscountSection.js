@@ -14,7 +14,7 @@ export const DiscountSection = () => {
                 خصم يصل حتي ٣٠٪ علي اجهازه اللاب توب
             </div>
         </Col>
-        <Col sm="6">
+        <Col sm="6" id="info">
             <img className="dicount-img" src={laptops} alt="" />
         </Col>
     </Row>
