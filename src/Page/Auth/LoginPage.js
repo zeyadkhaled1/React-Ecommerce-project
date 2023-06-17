@@ -14,7 +14,7 @@ export const LoginPage = () => {
 	return (
 		<Container style={{ minHeight: '680px' }}>
 			<Row className='py-5 d-flex justify-content-center '>
-				<Col sm='6' className='d-flex flex-column order-sm-2 my-5'style={{width: '35%' }}>
+				<Col sm='6' className='d-flex flex-column  my-5'>
 					<label className='mx-auto title-login' style={{ fontSize: '2.1em' }}>تسجيل الدخول </label>
 					<div className='form-floating mt-4'>
 						<input
@@ -80,7 +80,7 @@ export const LoginPage = () => {
 					</label>
 					{loading ? loading === true ? <Spinner animation='border' role='status' /> : null : null}
 				</Col>
-				<Col sm='6' className='d-flex flex-column' style={{ width: '47%' }}>
+				<Col sm='6' className='d-flex flex-column' >
  				 <Link to='/register'>
    					 <img src={reg_photo} className='reg_photo' alt='Registration' />
   					</Link>

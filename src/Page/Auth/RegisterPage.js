@@ -29,8 +29,8 @@ export const RegisterPage = () => {
 
 	return (
 		<Container style={{ minHeight: '680px' }}>
-			<Row className='py-5 d-flex justify-content-center hieght-search'>
-				<Col sm='6' className='d-flex flex-column order-sm-1' style={{width:'35%'}}>
+			<Row className='py-5  d-flex justify-content-center '>
+				<Col md='6' className='d-flex flex-column ' >
 					<label className='mx-auto title-login my-3' style={{fontSize:'30px'}}>تسجيل حساب</label>
 					<div className='user-input form-floating my-3 mx-auto'>
 						<input
@@ -150,7 +150,7 @@ export const RegisterPage = () => {
 					</button>
 					{loading ? loading === true ? <Spinner animation='border' role='status' /> : null : null}
 				</Col>
-				<Col sm='6' className='d-flex flex-column order-sm-1'>
+				<Col md='6' className='d-flex flex-column '>
  				 <Link to='/login'>
    					 <img src={forwardlogin} className='forwardlogin' alt='login' />
   					</Link>
