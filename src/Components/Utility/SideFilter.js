@@ -16,7 +16,7 @@ export const SideFilter = () => {
 	const handleCategoryClick = (category, SubCatArr) => {
 		setActiveCategory(activeCategory === category.title ? null : category.title);
 		if (activeCategory !== category.title) {
-			if (SubCatArr !== '0') {
+			if (SubCatArr != 0) {
 				const idArray = [category._id, ...SubCatArr.map(item => item._id)];
 				searchCat(idArray);
 			} else {

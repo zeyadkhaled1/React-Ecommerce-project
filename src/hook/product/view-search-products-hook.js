@@ -67,9 +67,10 @@ const ViewSearchProductsHook = () => {
 		}
 	};
 	const allProductsRes = useSelector(state => state.allProduct.products);
-	let items = allProductsRes.data ? allProductsRes.data.items : [];
-	let pagination = allProductsRes.data ? allProductsRes.data.paginationResult : [];
-	let length = allProductsRes.data ? allProductsRes.data.total : [];
+	let items = allProductsRes && allProductsRes.data ? allProductsRes.data.items : [];
+	let pagination =
+		allProductsRes && allProductsRes.data ? allProductsRes.data.paginationResult : [];
+	let length = allProductsRes && allProductsRes.data ? allProductsRes.data.total : [];
 
 	return [items, pagination, length, onPress, getProductSearched];
 };
