@@ -21,15 +21,19 @@ export const ForgetPasswordPage = () => {
 					أدخل ايميلك لبدء عملية إعادة تعيين كلمة المرور
 
 					</label>
-
+					<div className='form-floating user-input my-3  mx-auto'>
 					<input
 						placeholder='ادخل الايميل...'
 						value={email}
 						onChange={onChangeEmail}
 						type='email'
-						className='user-input my-3 text-center mx-auto'
-						style={{height:'50px' ,fontSize:'18px'}}
+						className='  user-input text-center form-control '
+						style={{height:'60px' }}
+						id='a7'
 					/>
+					<label for="a7" style={{fontSize:'13px'}}>ادخل الايميل...</label>
+					</div>
+					
 
 				<div className="d-flex justify-content-between my-3" style={{marginLeft:'5.5rem'}}>
   				<button onClick={onSubmit} className='btn-login mx-auto mt-2' style={{width:'170px' ,fontSize:'18px'}}>
@@ -37,7 +41,7 @@ export const ForgetPasswordPage = () => {
   				</button>
   				
 				  <Link to='/login'>
-				  		<button className='btn-login mx-auto mt-2' style={{width:'170px' ,fontSize:'18px',backgroundColor:'white',border: '1px solid black',color:'black'}}>
+				  		<button className='btn-login mx-auto mt-2' style={{width:'170px' ,fontSize:'18px',backgroundColor:'white',border: '1px solid black',color:'white'}}>
    				 		الغاء
   						</button>
   					</Link>

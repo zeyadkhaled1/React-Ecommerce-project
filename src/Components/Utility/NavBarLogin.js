@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import logo from '../../Images/logo.png';
+import logo from '../../Images/LogoWhite.png';
 import cart from '../../Images/cart.png';
 import login from '../../Images/login.png';
 import t1 from '../../Images/t1.png';
 import t2 from '../../Images/t2.png';
 import t3 from '../../Images/t3.png';
-
 import {Col,Row, Navbar, Container, Nav, FormControl, NavDropdown } from 'react-bootstrap';
 import { NavbarSearchHook } from '../../hook/search/navbar-search-hook';
 import GetAllUserCartHook from '../../hook/Cart/get-all-user-cart-hook';
@@ -68,9 +67,19 @@ export const NavBarLogin = () => {
 						value={searchWord || localStorage.getItem('searchWord')}
 						onChange={onChangeSearch}
 						type='search'
-						placeholder='ابحث...'
-						className='me-2 w-100 text-center'
+						placeholder='ابحث عن المنتجات...'
+						className='me-2 w-100 text-left'
 						aria-label='Search'
+						style={{
+							height: '45px',
+							fontSize: '18px',
+							paddingRight: '52px',
+							backgroundImage: `url(${require('../../Images/Search.PNG')})`,
+							backgroundPosition: 'right 13px center',
+							backgroundRepeat: 'no-repeat',
+							backgroundSize: '35px',
+						  }}
+						
 					/>
 					<Nav className='me-auto'>
 						{user.name ? (

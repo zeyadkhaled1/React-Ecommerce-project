@@ -34,6 +34,7 @@ body {
 .scroll:hover{
   background: var(--gradient2) !important;
 }
+
 /*swiper category*/
 .swiper-slide{
   display: flex;
@@ -44,6 +45,7 @@ body {
 .swiper-container{
 width: 100%;
 margin-bottom: 30px;
+
 
 }
 
@@ -482,11 +484,11 @@ margin-bottom: 30px;
   border-radius: 9px;
   border: none;
   color: white;
-  background-color: #272727;
+  background: var(--gradient);
 }
 
 .btn-login:hover {
-  color: rgb(206, 204, 204);
+  background: var(--gradient2);
 }
 
 /* end login and register */
@@ -567,9 +569,13 @@ margin-bottom: 30px;
 }
 
 .admin-side-text:hover {
-  background-color: #272727;
+  background: var(--gradient);
   color: white;
   font-size: 14px;
+}
+#active  {
+  color: white;
+  background: var(--gradient);
 }
 
 .admin-content-text {
@@ -631,11 +637,11 @@ margin-bottom: 30px;
   height: 46px;
   width: 150px;
   border-radius: 9px;
-  background-color: #272727;
+  background: var(--gradient);
 }
 
 .btn-save:hover {
-  color: rgb(164, 164, 164);
+  background: var(--gradient2);
 }
 
 .btn-a {
@@ -786,7 +792,7 @@ margin-bottom: 30px;
 }
 
 .dropdown-menu {
-  background-color: #212529 !important;
+  background: var(--gradient) !important;
   color: white !important;
 }
 
@@ -796,8 +802,8 @@ margin-bottom: 30px;
 }
 
 .dropdown-item:hover {
-  color: #212529 !important;
-  background-color: white !important;
+  
+  background:var(--gradient2) !important;
 }
 
 #upload-photo {

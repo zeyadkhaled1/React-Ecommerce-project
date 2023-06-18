@@ -26,7 +26,6 @@ const HomeCategory = () => {
 			
 			<Swiper
             className='swiper-container'
-			
 			modules={[Navigation, Pagination]}
 			spaceBetween={30}
 			slidesPerView={6}
