@@ -317,7 +317,7 @@ margin-bottom: 30px;
 /* products details page */
 
 .product-gallary-card {
-  height: 50vh !important;
+  height: 80vh !important;
   width: 370px;
   border-radius: 29px;
   background-color: #ffffff;
@@ -411,7 +411,7 @@ margin-bottom: 30px;
 /* products gallary slide style */
 .image-gallery-slide {
   width: 372px;
-  height: 350px;
+  height: 470px;
   border-radius: 29px;
 }
 
@@ -480,7 +480,7 @@ margin-bottom: 30px;
 
 .btn-login {
   height: 46px;
-  width: 40vw;
+  width: 374px;
   border-radius: 9px;
   border: none;
   color: white;
@@ -490,12 +490,7 @@ margin-bottom: 30px;
 .btn-login:hover {
   background: var(--gradient2);
 }
-.forwardlogin{
-  width: 50vw;
-}
-.reg_photo{
-  width: 50vw;
-}
+
 /* end login and register */
 
 /* cart page */

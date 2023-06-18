@@ -1,9 +1,9 @@
 import React from 'react'
 import { Container,Row,Col } from 'react-bootstrap'
 import laptops from '../../Images/laptops.png'
-import a1 from '../../Images/a1.png'
-import a2 from '../../Images/a2.png'
-import a3 from '../../Images/a3.png'
+import a1 from '../../Images/a1w.png'
+import a2 from '../../Images/a2w.png'
+import a3 from '../../Images/a3w.png'
 
 export const DiscountSection = () => {
   return (
@@ -14,11 +14,11 @@ export const DiscountSection = () => {
                 خصم يصل حتي ٣٠٪ علي اجهازه اللاب توب
             </div>
         </Col>
-        <Col sm="6" id="info">
+        <Col sm="6">
             <img className="dicount-img" src={laptops} alt="" />
         </Col>
     </Row>
-    <Row class="d-flex  d-flex-col lg:d-flex-row justify-content-around text-center  mt-4 pt-5">
+    <Row class="d-flex  d-flex-col lg:d-flex-row justify-content-around text-center  mt-4 pt-5" style={{marginRight:'90px'}}>
                 <Col class="d-flex " >
                     <img className="h-20 w-20 mr-9 lg:mr-5 icon sprite-home" src={a1} alt="" />
                         
@@ -33,7 +33,7 @@ export const DiscountSection = () => {
                         
                         <div  class="d-flex-1 xs:w-75 lg:w-auto">
                             <h1  class="text-primary-700 text-xl font-bold">أونلاين دائما </h1> 
-                            <p  class="mt-1 text-secondary-500">يمكنك تصفح موقعنا وتسجيل طلبك في أي وقت</p>
+                            <p  class="mt-1 text-secondary-500">يمكنك تصفح موقعنا في أي وقت</p>
                         </div>
                 </Col>
 

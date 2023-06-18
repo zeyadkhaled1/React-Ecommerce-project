@@ -28,8 +28,7 @@ export const HomePage = () => {
 				pathText='/allproducts'
 			/>
 			<BrandFeatured title='اشهر الماركات ' btntitle='المزيد' />
-			<ScrollToTop  color='white' className='scroll'
-		 smooth />
+			<ScrollToTop  color='white' className='scroll' smooth style={{borderRadius:'50%'}} />
 		 
 		</div>
 	);
