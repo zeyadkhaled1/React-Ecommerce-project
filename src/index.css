@@ -38,12 +38,11 @@ body {
 /*swiper category*/
 .swiper-slide{
   display: flex;
-  align-items: center;
+  align-items: inherit;
   justify-content: center;
-  
 }
 .swiper-container{
-width: 100%;
+width: 1;
 margin-bottom: 30px;
 
 
@@ -154,9 +153,7 @@ margin-bottom: 30px;
 
 /* products card style */
 .card:hover {
-  transform: scaleY(1.2);
-  transform: scaleX(1.05);
-  opacity: 0.9;
+  transform: scale(1.1);
 }
 .card-title {
   color: #555550;

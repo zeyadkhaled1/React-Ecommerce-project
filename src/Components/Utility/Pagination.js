@@ -7,6 +7,7 @@ export const Pagination = ({ pageCount, onPress }) => {
 	};
 
 	return (
+		<div style={{ padding: '7rem' }}>
 		<ReactPaginate
 			breakLabel='...'
 			nextLabel='التالى'
@@ -26,5 +27,7 @@ export const Pagination = ({ pageCount, onPress }) => {
 			breakLinkClassName={'page-link'}
 			activeClassName={'active'}
 		/>
+		</div>
 	);
+	
 };

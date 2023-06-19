@@ -7,7 +7,7 @@ export const AllCategoryPage = () => {
 	const [Categorys, pageCount, getPage, loading] = AllCategoryHook();
 
 	return (
-		<div>
+		<div >
 			<CategoryContainer data={Categorys} loading={loading} />
 			{pageCount > 1 && <Pagination onPress={getPage} pageCount={pageCount} />}
 		</div>
