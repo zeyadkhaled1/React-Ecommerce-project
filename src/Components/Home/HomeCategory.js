@@ -3,14 +3,16 @@ import { Container, Row, Spinner } from 'react-bootstrap';
 import { SubTitle } from '../Utility/SubTitle';
 import CategoryCard from './../Category/CategoryCard';
 import HomeCategoryHook from '../../hook/category/home-category-hook';
-
-
-
+import arrow_R from '../../Images/arrow_R.png'
+import arrow_L from '../../Images/arrow_L.png'
 import SwiperCore,{ Navigation, Pagination } from 'swiper/core';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.min.css';
-import 'swiper/components/navigation/navigation.min.css';
+//import 'swiper/components/navigation/navigation.min.css';
 import 'swiper/components/pagination/pagination.min.css';
+import "./CatSwiperStyle.css";
+
+
 SwiperCore.use([Pagination,Navigation]);
 
 
@@ -26,19 +28,21 @@ const HomeCategory = () => {
 			
 			<Swiper
             className='swiper-container'
+			style={{height:'230px'}}
 			modules={[Navigation, Pagination]}
 			spaceBetween={30}
 			slidesPerView={6}
-			navigation
+			navigation={{ nextEl: ".arrow-left1", prevEl: ".arrow-right1" }}
 			breakpoints={{
 				0: {
-				  slidesPerView: 1,
+				  slidesPerView: 1
+			
 				},
 				400:{
-				  slidesPerView:2,
+				  slidesPerView:2
 				},
 				600: {
-				  slidesPerView: 3,
+				  slidesPerView: 3
 				},
 				800:{
 				  slidesPerView:4
@@ -54,9 +58,8 @@ const HomeCategory = () => {
 				}
 			  }}
 			
-			
-		>
-			
+			  >
+	  
 			{loading === false ? (
 					categories.length > 0 ? (
 						
@@ -79,14 +82,12 @@ const HomeCategory = () => {
 				)}	
 			
 		
-
+			
 		</Swiper>
-
-
-			
-			
-				
+		
 			</Row>
+        <img className='arrow-right1' src={arrow_R} alt='Prev' />
+			<img className='arrow-left1' src={arrow_L} alt='next'/>
 		</Container>
 	);
 };

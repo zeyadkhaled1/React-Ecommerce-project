@@ -15,7 +15,7 @@ const CategoryCard = ({ background, img, title ,id}) => {
                     style={{ backgroundColor: `${background}` }}></div>{" "}
                     <Link to={`/products/category/${id}`} style={{textDecoration:'none'}}>
                 <img alt="zcv" src={img} className="categoty-card-img" />
-                <p className="categoty-card-text my-2">{title}</p>
+                <p className="categoty-card-text ">{title}</p>
                     </Link>
             </div>
         </Col>

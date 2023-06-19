@@ -58,7 +58,7 @@ export const VendorAllProductsCard = ({ item }) => {
 					</Col>
 				</Row>
 				<Link to={`/allproducts/${item._id}`} style={{ textDecoration: 'none' }}>
-					<Card.Img style={{ height: '228px', width: '100%' }} src={item.img[0]} />
+					<Card.Img style={{ maxHeight: '228px', maxWidth: '100%'}} src={item.img[0]} />
 					<Card.Body>
 						<Card.Title>
 							<div className='card-title'>{item.name}</div>

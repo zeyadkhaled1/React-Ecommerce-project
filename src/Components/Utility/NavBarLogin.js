@@ -116,9 +116,11 @@ export const NavBarLogin = () => {
 							style={{ color: 'white' }}>
 							<img src={cart} className='login-img' alt='sfvs' />
 							<p style={{ color: 'white' }}>العربة</p>
-							<span class='position-absolute top-15 start-100 translate-middle badge rounded-pill bg-danger'>
-								{itemsNum || 0}
-							</span>
+							<div class="position-absolute top-15 start-100 translate-middle">
+  							<span class="d-flex align-items-center justify-content-center badge rounded-pill bg-danger">
+  									{itemsNum || 0}
+ 							 </span>
+								</div>
 						</Nav.Link>
 					</Nav>
 				</Navbar.Collapse>

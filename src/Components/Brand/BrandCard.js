@@ -1,3 +1,4 @@
+import { transform } from 'framer-motion';
 import React from 'react'
 import { Col,Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
@@ -15,7 +16,7 @@ export const BrandCard = ({ img,id }) => {
 					backgroundColor: '#FFFFFF'
 				}}>
 					<Link to={`/products/brand/${id}`}>
-				<Card.Img style={{ width: '151px', height: '151px' }} src={img} />
+				<Card.Img style={{ width: '151px', height: '151px',transform: 'translateX(63px)'}} src={img} />
 				</Link>
 			</Card>
 		</Col>
