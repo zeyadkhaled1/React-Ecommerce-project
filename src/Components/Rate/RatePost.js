@@ -47,7 +47,7 @@ export const RatePost = () => {
 						cols='20'
 						placeholder='اكتب تعليقك....'
 					/>
-					<div className=' d-flex justify-content-end al'>
+					<div className=' d-flex justify-content-end al mt-2'>
 						<div onClick={onSubmit} className='product-cart-add px-3  py-2 text-center d-inline'>
 							اضف تعليق
 						</div>
