@@ -29,7 +29,7 @@ export const NavBarLogin = () => {
 	
 		<Navbar className='sticky-top nav ' bg='dark' variant='dark' expand='sm'>
 			<Container style={{ borderBottom:"1px solid grey" }} class=" d-flex  align-items-center justify-content-between p-1">
-						<Col><p  style={{ color: '#D2DE26',fontStyle:'italic' }}>أسهل وأسرع منصة تسوق .</p> </Col>
+						<Col><p  style={{ color: '#D2DE26',fontStyle:'italic' }}>أسهل وأسرع منصة تسوق</p> </Col>
 						<div class="d-flex flex-direction-row  gap-5">
 								
 								<a  style={{ textDecoration:"none"}}href="/allcategory" class="d-flex ">
@@ -37,12 +37,6 @@ export const NavBarLogin = () => {
 												<p style={{ color: 'white' }}className='align-self-center'>التصنيفات</p>
 									</a>
 								
-							
-								<a style={{ textDecoration:"none"}} href="#" class="d-flex ">
-									<img src={t1} className='top-nav' alt='sfvs' />
-												<p style={{ color: 'white' }}className='align-self-center'>معلومات عنا </p>
-									</a>
-
 								<a style={{ textDecoration:"none"}} href="#" class="d-flex ">
 										<img src={t2} className='top-nav' alt='sfvs' />
 													<p style={{ color: 'white' }}className='align-self-center'>اتصل ب19950</p>

@@ -8,7 +8,7 @@ import a3 from '../../Images/a3w.png'
 export const DiscountSection = () => {
   return (
     <Container>
-    <Row className="discount-backcolor mt-3 mb-5 mx-2 d-flex text-center align-items-center">
+    <Row className="discount-backcolor mt-5 mb-5 mx-2 d-flex text-center align-items-center">
         <Col sm="6">
             <div className="discount-title">
                 خصم يصل حتي ٣٠٪ علي اجهازه اللاب توب

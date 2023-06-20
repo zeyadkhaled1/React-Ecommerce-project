@@ -1,0 +1,45 @@
+
+                        /* Navigations Buttons */
+.Sliderarr-right {  
+   left: 0;
+    height:40px;
+    width:40px;
+    z-index: 999999;
+    transform: translate(146px, 115.8px);
+  }
+  .Sliderarr-left {
+    right: 0;
+    height:40px;
+    width:40px;
+    z-index: 9999999;
+    transform: translate(92px, 116px);
+    
+}
+  .swiper-button-disabled.Sliderarr-left,
+  .swiper-button-disabled.Sliderarr-right
+  {
+    opacity: 0.3;
+  }
+  
+                                /* Line and text Properties */
+  .lineX {
+    position: relative;
+  }
+  
+  .lineX::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 940px;
+    height: 4px;
+    opacity: 0.6;
+    transform: translate(288px,117px);
+    border-radius: 20px;
+    background-color: white;
+  }
+  .LineText{
+    color:white;
+    font-size: 22px;
+    transform: translate(1280px,126px);
+  }
