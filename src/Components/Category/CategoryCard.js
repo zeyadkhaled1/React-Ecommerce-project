@@ -8,13 +8,14 @@ const CategoryCard = ({ background, img, title ,id}) => {
             sm="6"
             md="4"
             lg="2"
-            className="my-4 d-flex justify-content-around ">
-            <div className="allCard mb-3 ">
+            className="my-4 d-flex justify-content-around">
+            <div className="allCard mb-3 text-center ">
                 <div
                     className="categoty-card "
-                    style={{ backgroundColor: `${background}` }}></div>{" "}
+                    style={{ backgroundColor: 'lightgrey' }}>
+                        </div>{" "}
                     <Link to={`/products/category/${id}`} style={{textDecoration:'none'}}>
-                <img alt="zcv" src={img} className="categoty-card-img" />
+                    <img alt="zcv" src={img} className="categoty-card-img" />
                 <p className="categoty-card-text ">{title}</p>
                     </Link>
             </div>

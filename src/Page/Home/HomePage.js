@@ -19,6 +19,7 @@ export const HomePage = () => {
 				title='الأكثر مبيعا'
 				btntitle='المزيد'
 				pathText='/allproducts'
+				
 			/>
 			<DiscountSection />
 			<CardProductsContainer

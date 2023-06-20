@@ -132,15 +132,20 @@ margin-bottom: 30px;
   width: 140px;
   border-radius: 50%;
   opacity: 0.3;
+  
 }
 
 
 .categoty-card-img {
   max-width: 110px;
   max-height: 100px;
-  position: absolute;
+  position:absolute;
   top: 20%;
-  left: 10%;
+  left: 12%;
+}
+
+.categoty-card-img:hover {
+  transform: translateY(-50px);
 }
 
 .categoty-card-text {
@@ -213,9 +218,10 @@ margin-bottom: 30px;
 
 /* discount setion */
 .discount-backcolor {
-  height: 180px;
+  height: 270x;
+  width: 1234px;
   border-radius: 8px;
-  background: radial-gradient(circle, #767676 0%, #4d4f50 100%, #494c4d 100%);
+  
 }
 
 .discount-title {
@@ -315,7 +321,7 @@ margin-bottom: 30px;
 
 .product-gallary-card {
   height: 80vh !important;
-  width: 370px;
+  width: 350px;
   border-radius: 29px;
   background-color: #ffffff;
 }

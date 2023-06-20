@@ -4,21 +4,15 @@ import laptops from '../../Images/laptops.png'
 import a1 from '../../Images/a1w.png'
 import a2 from '../../Images/a2w.png'
 import a3 from '../../Images/a3w.png'
+import banner from '../../Images/banner.png'
 
 export const DiscountSection = () => {
   return (
     <Container>
     <Row className="discount-backcolor mt-5 mb-5 mx-2 d-flex text-center align-items-center">
-        <Col sm="6">
-            <div className="discount-title">
-                خصم يصل حتي ٣٠٪ علي اجهازه اللاب توب
-            </div>
-        </Col>
-        <Col sm="6">
-            <img className="dicount-img" src={laptops} alt="" />
-        </Col>
+    <img  className="discount-backcolor" src={banner} alt="" style={{height:'270px',width:'1234px'}} />
     </Row>
-    <Row class="d-flex  d-flex-col lg:d-flex-row justify-content-around text-center  mt-4 pt-5" style={{marginRight:'90px'}}>
+    <Row class="d-flex  d-flex-col lg:d-flex-row justify-content-around text-center  mt-4 pt-5" style={{marginRight:'120px',marginTop:'80px'}}>
                 <Col class="d-flex " >
                     <img className="h-20 w-20 mr-9 lg:mr-5 icon sprite-home" src={a1} alt="" />
                         
