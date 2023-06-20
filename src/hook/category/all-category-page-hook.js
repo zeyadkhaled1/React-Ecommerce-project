@@ -18,7 +18,7 @@ const AllCategoryHook = () => {
 			: 0;
 
 	const getPage = page =>
-		dispatch(getAllCategory(`?pageNumber=${page}&pageSize=${pageSize}&sort=-_id`));
+		dispatch(getAllCategory(`?pageNumber=${page}&pageSize=${pageSize}&isParent=false&sort=-_id`));
 	return [categories, pageCount, getPage, loading];
 };
 
