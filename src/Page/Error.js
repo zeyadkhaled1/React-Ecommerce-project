@@ -9,13 +9,13 @@ export const ErrorPage = () => {
 	const msg = searchParams.get('msg');
 
 	useEffect(() => {
-		const user = Cookies.get('x-auth-user') ? Cookies.get('x-auth-user') : undefined;
-		const token = Cookies.get('x-auth-token') ? Cookies.get('x-auth-token') : undefined;
+		const user = Cookies.get('x-auth-user') || searchParams.get('user') || undefined;
+		const token = Cookies.get('x-auth-token') || searchParams.get('token') || undefined;
 		if (user && token) {
 			localStorage.setItem('user', user);
 			localStorage.setItem('token', token);
-			Cookies.remove('x-auth-user');
-			Cookies.remove('x-auth-token');
+			Cookies.get('x-auth-user') && Cookies.remove('x-auth-user');
+			Cookies.get('x-auth-token') && Cookies.remove('x-auth-token');
 			navigate('/');
 			navigate(0);
 		}
