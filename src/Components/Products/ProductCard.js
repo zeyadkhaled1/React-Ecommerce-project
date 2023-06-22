@@ -1,16 +1,17 @@
 import React from 'react';
-import { Card, Col,Row} from 'react-bootstrap';
+import { Card, Row } from 'react-bootstrap';
 import rate from '../../Images/rate.png';
 import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import ProductCardHook from '../../hook/product/product-card-hook';
-import { color } from 'framer-motion';
 
 const ProductCard = ({ item, favProd }) => {
 	const [favImg, handleFav] = ProductCardHook(item, favProd);
 
 	return (
-		<Row  className='' style={{width:'250px',height:'350px' ,marginLeft:'7px',marginBottom:'20px'}}>
+		<Row
+			className=''
+			style={{ width: '250px', height: '350px', marginLeft: '7px', marginBottom: '20px' }}>
 			<Card
 				className='my-2'
 				style={{
@@ -22,7 +23,7 @@ const ProductCard = ({ item, favProd }) => {
 					boxShadow: '0 2px 2px 0 rgba(151,151,151,0.5)'
 				}}>
 				<Link reloadDocument to={`/allproducts/${item._id}`} style={{ textDecoration: 'none' }}>
-					<Card.Img style={{ maxHeight: '228px', maxwidth: '100%'}} src={item.img[0]} />
+					<Card.Img style={{ maxHeight: '228px', maxwidth: '100%' }} src={item.img[0]} />
 				</Link>
 				<div className='d-flex justify-content-end mx-2 mt-1'>
 					<img
@@ -34,7 +35,6 @@ const ProductCard = ({ item, favProd }) => {
 							height: '28px',
 							width: '33px',
 							cursor: 'pointer'
-							
 						}}
 					/>
 				</div>
