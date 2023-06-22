@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Col } from 'react-bootstrap';
+import { Card, Col,Row} from 'react-bootstrap';
 import rate from '../../Images/rate.png';
 import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -10,7 +10,7 @@ const ProductCard = ({ item, favProd }) => {
 	const [favImg, handleFav] = ProductCardHook(item, favProd);
 
 	return (
-		<Col  className='d-flex'>
+		<Row  className='' style={{width:'250px',height:'350px' ,marginLeft:'7px',marginBottom:'20px'}}>
 			<Card
 				className='my-2'
 				style={{
@@ -57,7 +57,7 @@ const ProductCard = ({ item, favProd }) => {
 				</Card.Body>
 			</Card>
 			<ToastContainer />
-		</Col>
+		</Row>
 	);
 };
 

@@ -9,8 +9,8 @@ export const CardProductsContainer = ({ title, btntitle, pathText, products }) =
 
 	return (
 		<Container>
-			{products.length >0 ? <SubTitle title={title} btntitle={btntitle} pathText={pathText} /> : null}
-			<Row className='my-0 d-flex justify-content-between'>
+			{/* {products.length >0 ? <SubTitle title={title} btntitle={btntitle} pathText={pathText} /> : null} */}
+			<Row className='my-0 d-flex justify-content-start'>
 				{products.length >0
 					? products.map((item, index) => <ProductCard key={index} item={item} favProd={favProd} />)
 					:  <div className='d-flex vh-100 justify-content-center align-items-center'><h3 className=' '>لا يوجد منتجات</h3></div>}
