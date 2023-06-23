@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Col } from 'react-bootstrap';
+import { Card, Col,Row } from 'react-bootstrap';
 import rate from '../../Images/rate.png';
 import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -9,7 +9,7 @@ const ProductCard = ({ item, favProd }) => {
 	const [favImg, handleFav] = ProductCardHook(item, favProd);
 
 	return (
-		<Col
+		<Row
 			className=''
 			style={{ width: '250px', height: '350px', marginLeft: '7px', marginBottom: '20px' }}>
 			<Card
@@ -20,7 +20,7 @@ const ProductCard = ({ item, favProd }) => {
 					borderRadius: '8px',
 					border: 'none',
 					backgroundColor: '#FFFFFF',
-					boxShadow: '0 2px 2px 0 rgba(151,151,151,0.5)'
+					boxShadow: '0 2px 2px 0 rgba(151,151,151,0.5)',
 				}}>
 				<Link reloadDocument to={`/allproducts/${item._id}`} style={{ textDecoration: 'none' }}>
 					<Card.Img style={{ maxHeight: '228px', maxwidth: '100%' }} src={item.img[0]} />
@@ -57,7 +57,7 @@ const ProductCard = ({ item, favProd }) => {
 				</Card.Body>
 			</Card>
 			<ToastContainer />
-		</Col>
+		</Row>
 	);
 };
 
