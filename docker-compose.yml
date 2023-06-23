@@ -1,0 +1,26 @@
+version: '2'
+services:
+
+  react-app-deploy:
+    image: basim95/react-app-deploy
+    stdin_open: true
+    ports:
+      - "3000:3000"
+    
+    
+
+  api-server-deploy:
+    image: basim95/api-server-deploy
+    ports:
+      - "5000:5000"  
+    
+  
+  nginx:
+    image: nginx:stable-alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - react-app-deploy 
+      
