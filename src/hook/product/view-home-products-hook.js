@@ -5,8 +5,8 @@ import { getBestSellerProducts, getMostRecentProducts } from '../../Redux/Action
 const ViewHomeProductsHook = () => {
 	const dispatch = useDispatch();
 	useEffect(() => {
-		dispatch(getBestSellerProducts(4));
-		dispatch(getMostRecentProducts(4));
+		dispatch(getBestSellerProducts(5));
+		dispatch(getMostRecentProducts(5));
 	}, []);
 
 	const bestSellerRes = useSelector(state => state.allProduct.bestSeller);

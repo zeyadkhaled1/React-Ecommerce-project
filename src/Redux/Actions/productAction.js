@@ -138,7 +138,7 @@ export const getProduct = id => async dispatch => {
 
 export const getBestSellerProducts = limit => async dispatch => {
 	try {
-		const response = await useGetData(`/api/item?pageSize=${limit ? limit : 4}&sort=-sold`);
+		const response = await useGetData(`/api/item?pageSize=${limit ? limit : 5}&sort=-sold`);
 		dispatch({
 			type: GET_BEST_SELLER_PRODUCT,
 			payload: response,
